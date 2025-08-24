@@ -52,60 +52,33 @@ const Career = () => {
           </div>
         </section>
 
-        {/* Open Positions */}
+        {/* No Vacancy Section */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Open Positions</h2>
-              <p className="text-lg text-muted-foreground">
-                Explore exciting career opportunities with VertaTech Solutions
+            <div className="text-center max-w-2xl mx-auto">
+              <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto mb-8">
+                <div className="text-4xl">📋</div>
+              </div>
+              <h2 className="text-3xl font-bold mb-4">No Current Openings</h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                We don't have any open positions at the moment, but we're always growing! 
+                Send us your CV and we'll keep you in mind for future opportunities.
               </p>
-            </div>
-
-            <div className="space-y-6 max-w-4xl mx-auto">
-              {positions.map((position, index) => (
-                <Card key={index} className="shadow-card hover:shadow-soft transition-all duration-300">
-                  <CardHeader>
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <div>
-                        <CardTitle className="text-xl mb-2">{position.title}</CardTitle>
-                        <CardDescription>{position.description}</CardDescription>
-                      </div>
-                      <Badge variant="secondary">{position.department}</Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid md:grid-cols-3 gap-4 mb-6">
-                      <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <MapPin className="h-4 w-4" />
-                        <span>{position.location}</span>
-                      </div>
-                      <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <Clock className="h-4 w-4" />
-                        <span>{position.type}</span>
-                      </div>
-                      <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <DollarSign className="h-4 w-4" />
-                        <span>{position.salary}</span>
-                      </div>
-                    </div>
-
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-2">Requirements:</h4>
-                      <ul className="space-y-1">
-                        {position.requirements.map((req, reqIndex) => (
-                          <li key={reqIndex} className="flex items-center space-x-2 text-sm text-muted-foreground">
-                            <div className="w-1.5 h-1.5 bg-accent rounded-full" />
-                            <span>{req}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <Button className="w-full md:w-auto">Apply Now</Button>
-                  </CardContent>
-                </Card>
-              ))}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  onClick={() => window.open("mailto:careers@vertatechsolutions.co.ke?subject=Future%20Opportunities", "_blank")}
+                  size="lg"
+                >
+                  Send Your CV
+                </Button>
+                <Button 
+                  onClick={() => window.open("https://wa.me/254720496076?text=Hello%2C%20I%27m%20interested%20in%20future%20career%20opportunities", "_blank")}
+                  variant="outline" 
+                  size="lg"
+                >
+                  WhatsApp Us
+                </Button>
+              </div>
             </div>
           </div>
         </section>

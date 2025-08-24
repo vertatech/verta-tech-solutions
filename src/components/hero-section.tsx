@@ -30,15 +30,15 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         {/* Logo */}
-        <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-service-icon-bg rounded-full mb-6">
+        <div className="mb-8 animate-bounce-in">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-service-icon-bg rounded-full mb-6 animate-float">
             <div className="w-16 h-16 bg-gradient-to-br from-primary to-teal rounded-full flex items-center justify-center">
               <div className="grid grid-cols-3 gap-1">
                 {Array.from({ length: 9 }).map((_, i) => (
                   <div
                     key={i}
-                    className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"
-                    style={{ animationDelay: `${i * 0.1}s` }}
+                    className="w-1.5 h-1.5 bg-white rounded-full animate-pulse-slow"
+                    style={{ animationDelay: `${i * 0.2}s` }}
                   />
                 ))}
               </div>
@@ -47,19 +47,19 @@ const HeroSection = () => {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-hero-text mb-6">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-hero-text mb-6 animate-fade-in">
           Welcome to{" "}
-          <span className="text-accent">VertaTech</span>{" "}
+          <span className="text-accent animate-slide-in-right">VertaTech</span>{" "}
           Solutions
         </h1>
 
         {/* Subheading */}
-        <h2 className="text-xl md:text-2xl lg:text-3xl text-hero-text/90 mb-8 font-light">
+        <h2 className="text-xl md:text-2xl lg:text-3xl text-hero-text/90 mb-8 font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           Navigating Kenya's Digital Frontier
         </h2>
 
         {/* Description */}
-        <p className="text-lg md:text-xl text-hero-text/80 max-w-4xl mx-auto mb-12 leading-relaxed">
+        <p className="text-lg md:text-xl text-hero-text/80 max-w-4xl mx-auto mb-12 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           We are your strategic partner in shaping a thriving digital future for your business or 
           organization across Kenya. We specialize in providing robust solutions that empower you 
           to excel in today's rapidly evolving technological landscape.
@@ -70,9 +70,10 @@ const HeroSection = () => {
           {services.map((service, index) => (
             <div
               key={service.label}
-              className="flex flex-col items-center space-y-2 group cursor-pointer"
+              className="flex flex-col items-center space-y-2 group cursor-pointer animate-scale-in"
+              style={{ animationDelay: `${0.6 + index * 0.1}s` }}
             >
-              <div className="w-16 h-16 bg-service-icon-bg rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
+              <div className="w-16 h-16 bg-service-icon-bg rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
                 <service.icon className="h-8 w-8 text-hero-text" />
               </div>
               <span className="text-sm text-hero-text/90 font-medium text-center">
@@ -83,10 +84,10 @@ const HeroSection = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '1s' }}>
           <Button 
             size="lg" 
-            className="bg-secondary text-primary hover:bg-secondary/90 shadow-button group min-w-[140px]"
+            className="bg-secondary text-primary hover:bg-secondary/90 shadow-button group min-w-[140px] hover:scale-105 transition-all duration-300"
           >
             Get Started
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -95,7 +96,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 min-w-[140px]"
+            className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 min-w-[140px] hover:scale-105 transition-all duration-300"
           >
             Learn More
           </Button>
@@ -103,7 +104,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             onClick={handleWhatsApp}
-            className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-button min-w-[140px]"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-button min-w-[140px] hover:scale-105 transition-all duration-300 animate-pulse"
           >
             WhatsApp Us 📱
           </Button>

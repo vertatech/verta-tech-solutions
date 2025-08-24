@@ -1,6 +1,7 @@
 import Navigation from "@/components/ui/navigation";
 import HeroSection from "@/components/hero-section";
 import WorkShowcase from "@/components/work-showcase";
+import Footer from "@/components/footer";
 
 const Index = () => {
   return (
@@ -8,6 +9,7 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <WorkShowcase />
+      <Footer />
     </div>
   );
 };

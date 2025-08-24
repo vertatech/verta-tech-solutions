@@ -4,30 +4,62 @@ import { Button } from "@/components/ui/button";
 import { Network, Shield, Eye, Smartphone, Server, Wifi, Camera, Code } from "lucide-react";
 
 const Services = () => {
+  const handleWhatsApp = () => {
+    window.open("https://wa.me/254720496076?text=Hello%20VertaTech%2C%20I%27m%20interested%20in%20your%20services", "_blank");
+  };
+
+  const handleEmail = () => {
+    window.open("mailto:info@vertatechsolutions.co.ke?subject=Service%20Inquiry", "_blank");
+  };
+
   const services = [
     {
-      icon: Network,
-      title: "Networking Solutions",
-      description: "Complete network infrastructure setup, configuration, and maintenance for businesses of all sizes.",
-      features: ["LAN/WAN Setup", "Router Configuration", "Network Security", "Wireless Solutions"]
-    },
-    {
-      icon: Shield,
-      title: "Security Systems",
-      description: "Comprehensive security solutions to protect your business assets and ensure peace of mind.",
-      features: ["Access Control", "Intrusion Detection", "Alarm Systems", "Security Consulting"]
-    },
-    {
-      icon: Eye,
-      title: "CCTV Installation",
-      description: "Professional CCTV systems with remote monitoring capabilities and high-definition recording.",
-      features: ["HD Cameras", "Remote Monitoring", "Night Vision", "Cloud Storage"]
+      icon: Code,
+      title: "Web & System Development",
+      description: "Custom websites, web applications, and robust internal systems designed to enhance your online presence and streamline operations.",
+      features: ["Custom Websites", "E-commerce Platforms", "Management Systems", "Web Applications"]
     },
     {
       icon: Smartphone,
-      title: "System, Web & Mobile Apps",
-      description: "Custom software development services including web applications, mobile apps, and enterprise systems.",
-      features: ["Web Development", "Mobile Apps", "Custom Software", "API Integration"]
+      title: "Mobile App Development",
+      description: "Native and cross-platform mobile applications for iOS and Android, designed to provide seamless user experiences and expand your business reach.",
+      features: ["iOS Applications", "Android Applications", "Cross-Platform Apps", "App Store Deployment"]
+    },
+    {
+      icon: Eye,
+      title: "CCTV & Network Installations",
+      description: "Professional CCTV surveillance systems and network infrastructure for secure, high-speed connectivity across your organization.",
+      features: ["HD Camera Systems", "Network Security", "Remote Monitoring", "WiFi Configuration"]
+    },
+    {
+      icon: Network,
+      title: "Biometric Attendance Systems",
+      description: "Advanced biometric systems for accurate workforce management and secure access control solutions.",
+      features: ["Fingerprint Recognition", "Attendance Tracking", "Access Control", "Payroll Integration"]
+    },
+    {
+      icon: Camera,
+      title: "Graphic Design & Video Editing",
+      description: "Professional creative services bringing your brand vision to life through compelling visual content and narratives.",
+      features: ["Brand Design", "Marketing Materials", "Video Production", "Digital Content"]
+    },
+    {
+      icon: Server,
+      title: "Business Consultations & Registration",
+      description: "Expert guidance for business setup, KRA registration, and strategic advice for operational efficiency and growth.",
+      features: ["Business Registration", "KRA Compliance", "Strategic Planning", "Market Entry"]
+    },
+    {
+      icon: Wifi,
+      title: "ICT Equipment & Software Supply",
+      description: "Reliable sourcing of high-quality ICT equipment and licensed software solutions to meet your operational needs.",
+      features: ["Computer Hardware", "Networking Equipment", "Licensed Software", "Technical Support"]
+    },
+    {
+      icon: Shield,
+      title: "IT Security Solutions",
+      description: "Comprehensive security measures to protect your business from cyber threats and ensure data integrity.",
+      features: ["Firewall Configuration", "Antivirus Solutions", "Data Backup", "Security Audits"]
     }
   ];
 
@@ -76,7 +108,14 @@ const Services = () => {
                         </li>
                       ))}
                     </ul>
-                    <Button className="w-full">Learn More</Button>
+                    <div className="flex gap-2">
+                      <Button onClick={handleWhatsApp} className="flex-1 bg-accent hover:bg-accent/90">
+                        WhatsApp
+                      </Button>
+                      <Button onClick={handleEmail} variant="outline" className="flex-1">
+                        Email Us
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               ))}

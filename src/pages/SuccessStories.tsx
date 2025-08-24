@@ -2,6 +2,7 @@ import Navigation from "@/components/ui/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Building, TrendingUp, Users } from "lucide-react";
+import Footer from "@/components/footer";
 
 const SuccessStories = () => {
   const stories = [
@@ -138,6 +139,7 @@ const SuccessStories = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

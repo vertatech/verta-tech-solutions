@@ -9,15 +9,15 @@ const WorkShowcase = () => {
   const projects = [
     {
       id: 1,
-      title: "Web Development",
+      title: "Web Development", 
       description: "Modern, responsive websites and web applications",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center"
     },
     {
       id: 2,
       title: "System Development",
-      description: "Custom software solutions and enterprise systems",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center"
+      description: "Custom software solutions and enterprise systems", 
+      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=600&fit=crop&crop=center"
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const WorkShowcase = () => {
     },
     {
       id: 4,
-      title: "CCTV Installation",
+      title: "CCTV Installation", 
       description: "Security camera systems and monitoring solutions",
       image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop&crop=center"
     },
@@ -35,13 +35,13 @@ const WorkShowcase = () => {
       id: 5,
       title: "Biometric Systems",
       description: "Advanced biometric access control solutions",
-      image: "https://images.unsplash.com/photo-1633113089051-382085ae5fd4?w=800&h=600&fit=crop&crop=center"
+      image: "https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?w=800&h=600&fit=crop&crop=center"
     },
     {
       id: 6,
-      title: "Cabinet Management",
-      description: "Professional IT infrastructure and cable management",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&crop=center"
+      title: "IT Consulting",
+      description: "Strategic technology guidance and digital transformation",
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop&crop=center"
     }
   ];
 

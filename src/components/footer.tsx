@@ -37,7 +37,7 @@ const Footer = () => {
                 size="sm" 
                 variant="outline" 
                 className="border-background/20 text-background hover:bg-background/10"
-                onClick={() => window.open("https://facebook.com/vertatechsolutions", "_blank")}
+                onClick={() => window.open("https://www.facebook.com/people/VertaTech-Solutions/61552364856682/", "_blank")}
               >
                 FB
               </Button>
@@ -45,15 +45,15 @@ const Footer = () => {
                 size="sm" 
                 variant="outline" 
                 className="border-background/20 text-background hover:bg-background/10"
-                onClick={() => window.open("https://twitter.com/vertatechsolutions", "_blank")}
+                onClick={() => window.open("https://x.com/VertaTechSoln?t=Vz9wIEIunMtxVlReYBq6lA&s=09", "_blank")}
               >
-                TW
+                X
               </Button>
               <Button 
                 size="sm" 
                 variant="outline" 
                 className="border-background/20 text-background hover:bg-background/10"
-                onClick={() => window.open("https://linkedin.com/company/vertatechsolutions", "_blank")}
+                onClick={() => window.open("https://www.linkedin.com/company/verta-tech-solutions/", "_blank")}
               >
                 LI
               </Button>
@@ -61,9 +61,9 @@ const Footer = () => {
                 size="sm" 
                 variant="outline" 
                 className="border-background/20 text-background hover:bg-background/10"
-                onClick={() => window.open("https://instagram.com/vertatechsolutions", "_blank")}
+                onClick={() => window.open("https://www.tiktok.com/@vertatechsolutions?_t=ZM-8z8oZJs3eGG&_r=1", "_blank")}
               >
-                IG
+                TT
               </Button>
             </div>
           </div>

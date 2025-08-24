@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowRight } from "lucide-react";
+import Footer from "@/components/footer";
 
 const Blogs = () => {
   const posts = [
@@ -110,6 +111,7 @@ const Blogs = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

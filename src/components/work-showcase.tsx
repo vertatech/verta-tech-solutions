@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -45,6 +45,17 @@ const WorkShowcase = () => {
     }
   ];
 
+  // Auto-play functionality with 3-second delay
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === projects.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [projects.length]);
+
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === projects.length - 1 ? 0 : prevIndex + 1
@@ -89,7 +100,7 @@ const WorkShowcase = () => {
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-80 md:h-96 lg:h-[28rem] object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-80 md:h-96 lg:h-[32rem] object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                         <div className="absolute bottom-8 left-8 right-8 text-white">
@@ -108,7 +119,7 @@ const WorkShowcase = () => {
           <Button
             variant="outline"
             size="icon"
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-soft"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-soft z-10"
             onClick={prevSlide}
           >
             <ChevronLeft className="h-4 w-4" />
@@ -117,7 +128,7 @@ const WorkShowcase = () => {
           <Button
             variant="outline"
             size="icon"
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-soft"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-soft z-10"
             onClick={nextSlide}
           >
             <ChevronRight className="h-4 w-4" />

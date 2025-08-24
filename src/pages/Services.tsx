@@ -5,12 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Network, Shield, Eye, Smartphone, Server, Wifi, Camera, Code } from "lucide-react";
 
 const Services = () => {
-  const handleWhatsApp = () => {
-    window.open("https://wa.me/254720496076?text=Hello%20VertaTech%2C%20I%27m%20interested%20in%20your%20services", "_blank");
-  };
-
-  const handleEmail = () => {
-    window.open("mailto:info@vertatechsolutions.co.ke?subject=Service%20Inquiry", "_blank");
+  // WhatsApp handler with service-specific message
+  const handleGetService = (serviceName) => {
+    const message = `Hello VertaTech! I'm interested in your ${serviceName} service. Could you please provide more information?`;
+    window.open(`https://wa.me/254720496076?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const services = [
@@ -109,12 +107,12 @@ const Services = () => {
                         </li>
                       ))}
                     </ul>
-                    <div className="flex gap-2">
-                      <Button onClick={handleWhatsApp} className="flex-1 bg-accent hover:bg-accent/90">
-                        WhatsApp
-                      </Button>
-                      <Button onClick={handleEmail} variant="outline" className="flex-1">
-                        Email Us
+                    <div className="mt-6">
+                      <Button 
+                        onClick={() => handleGetService(service.title)}
+                        className="w-full bg-primary hover:bg-primary/90 text-white"
+                      >
+                        Get Service
                       </Button>
                     </div>
                   </CardContent>

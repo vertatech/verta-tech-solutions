@@ -139,46 +139,35 @@ const About = () => {
             </div>
 
             {/* Team Section */}
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Leadership Team</h2>
                 <p className="text-lg text-muted-foreground">Meet the experts driving VertaTech's vision forward</p>
               </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <Card className="p-6 text-center">
+              <div className="grid md:grid-cols-3 gap-8">
+                <Card className="p-6 text-center shadow-card hover:shadow-soft transition-all duration-300">
                   <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">CEO</span>
+                    <span className="text-2xl font-bold text-primary">JK</span>
                   </div>
-                  <h4 className="text-xl font-bold mb-2">Chief Executive Officer</h4>
-                  <p className="text-muted-foreground text-sm">Strategic leadership and business development</p>
+                  <h4 className="text-xl font-bold mb-2">John Kiprotich</h4>
+                  <p className="text-primary font-semibold mb-2">Chief Executive Officer</p>
+                  <p className="text-muted-foreground text-sm">Strategic leadership and business development visionary</p>
                 </Card>
-                <Card className="p-6 text-center">
+                <Card className="p-6 text-center shadow-card hover:shadow-soft transition-all duration-300">
                   <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">CTO</span>
+                    <span className="text-2xl font-bold text-primary">MW</span>
                   </div>
-                  <h4 className="text-xl font-bold mb-2">Chief Technology Officer</h4>
-                  <p className="text-muted-foreground text-sm">Technology strategy and innovation</p>
+                  <h4 className="text-xl font-bold mb-2">Mary Wanjiku</h4>
+                  <p className="text-primary font-semibold mb-2">Chief Technology Officer</p>
+                  <p className="text-muted-foreground text-sm">Technology strategy and innovation leader</p>
                 </Card>
-                <Card className="p-6 text-center">
+                <Card className="p-6 text-center shadow-card hover:shadow-soft transition-all duration-300">
                   <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">COO</span>
+                    <span className="text-2xl font-bold text-primary">DM</span>
                   </div>
-                  <h4 className="text-xl font-bold mb-2">Chief Operations Officer</h4>
-                  <p className="text-muted-foreground text-sm">Operations management and efficiency</p>
-                </Card>
-                <Card className="p-6 text-center">
-                  <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">PM</span>
-                  </div>
-                  <h4 className="text-xl font-bold mb-2">Project Manager</h4>
-                  <p className="text-muted-foreground text-sm">Project coordination and delivery</p>
-                </Card>
-                <Card className="p-6 text-center">
-                  <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">LD</span>
-                  </div>
-                  <h4 className="text-xl font-bold mb-2">Lead Developer</h4>
-                  <p className="text-muted-foreground text-sm">Software development and architecture</p>
+                  <h4 className="text-xl font-bold mb-2">David Muthoni</h4>
+                  <p className="text-primary font-semibold mb-2">Chief Operations Officer</p>
+                  <p className="text-muted-foreground text-sm">Operations excellence and efficiency expert</p>
                 </Card>
               </div>
             </div>

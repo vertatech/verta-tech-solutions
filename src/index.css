@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* VertaTech Solutions Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
@@ -17,26 +15,44 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* VertaTech Brand Colors */
+    --primary: 238 75% 62%; /* Blue #4F46E5 */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 222.2 84% 4.9%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 158 64% 52%; /* Green #10B981 */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 238 75% 62%;
 
     --radius: 0.5rem;
+
+    /* VertaTech Custom Design Tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(238 75% 62%), hsl(188 85% 52%));
+    --gradient-subtle: linear-gradient(180deg, hsl(238 75% 62% / 0.05), hsl(188 85% 52% / 0.05));
+    --teal: 188 85% 52%; /* Teal #06B6D4 */
+    --nav-bg: 0 0% 100% / 0.95;
+    --hero-text: 0 0% 100%;
+    --service-icon-bg: 0 0% 100% / 0.1;
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(238 75% 62% / 0.15);
+    --shadow-card: 0 8px 32px hsl(222.2 84% 4.9% / 0.08);
+    --shadow-button: 0 4px 12px hsl(238 75% 62% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +117,34 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Hero section styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Custom shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-button {
+    box-shadow: var(--shadow-button);
   }
 }

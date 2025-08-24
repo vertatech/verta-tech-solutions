@@ -75,26 +75,26 @@ const WorkShowcase = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative max-w-4xl mx-auto animate-scale-in">
-          <div className="overflow-hidden rounded-lg">
+        <div className="relative max-w-6xl mx-auto animate-scale-in">
+          <div className="overflow-hidden rounded-xl shadow-soft">
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {projects.map((project) => (
                 <div key={project.id} className="w-full flex-shrink-0">
-                  <Card className="bg-card border-0 shadow-card hover:shadow-soft transition-all duration-300">
+                  <Card className="bg-card border-0 shadow-none">
                     <CardContent className="p-0">
                       <div className="relative group">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-80 md:h-96 lg:h-[28rem] object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                        <div className="absolute bottom-6 left-6 right-6 text-white">
-                          <h3 className="text-2xl font-bold mb-2 animate-slide-in-left">{project.title}</h3>
-                          <p className="text-white/90 animate-slide-in-right">{project.description}</p>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                        <div className="absolute bottom-8 left-8 right-8 text-white">
+                          <h3 className="text-3xl md:text-4xl font-bold mb-3 animate-slide-in-left">{project.title}</h3>
+                          <p className="text-lg text-white/90 animate-slide-in-right">{project.description}</p>
                         </div>
                       </div>
                     </CardContent>

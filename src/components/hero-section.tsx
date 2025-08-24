@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Shield, Eye, Smartphone } from "lucide-react";
+import vertatechLogo from "@/assets/vertatech-logo.png";
 import techHeroBg from "@/assets/tech-hero-bg.jpg";
 
 const HeroSection = () => {
@@ -31,18 +32,8 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         {/* Logo */}
         <div className="mb-8 animate-bounce-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-service-icon-bg rounded-full mb-6 animate-float">
-            <div className="w-16 h-16 bg-gradient-to-br from-primary to-teal rounded-full flex items-center justify-center">
-              <div className="grid grid-cols-3 gap-1">
-                {Array.from({ length: 9 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-1.5 h-1.5 bg-white rounded-full animate-pulse-slow"
-                    style={{ animationDelay: `${i * 0.2}s` }}
-                  />
-                ))}
-              </div>
-            </div>
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-service-icon-bg rounded-full mb-6 animate-float">
+            <img src={vertatechLogo} alt="VertaTech Solutions" className="w-20 h-20 rounded-full" />
           </div>
         </div>
 

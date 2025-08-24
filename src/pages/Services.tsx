@@ -1,4 +1,5 @@
 import Navigation from "@/components/ui/navigation";
+import Footer from "@/components/footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Network, Shield, Eye, Smartphone, Server, Wifi, Camera, Code } from "lucide-react";
@@ -123,6 +124,7 @@ const Services = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

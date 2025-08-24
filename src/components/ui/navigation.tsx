@@ -24,11 +24,11 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <img src={vertatechLogo} alt="VertaTech Solutions" className="h-10 w-10" />
+          <Link to="/" className="flex items-center space-x-3" onClick={() => window.scrollTo(0, 0)}>
+            <img src={vertatechLogo} alt="VertaTech Solutions" className="h-12 w-12" />
             <div className="flex flex-col">
-              <span className="text-primary font-bold text-lg">VertaTech Solutions</span>
-              <span className="text-xs text-muted-foreground">Digital Frontier</span>
+              <span className="text-primary font-bold text-xl">VertaTech</span>
+              <span className="text-xs text-muted-foreground -mt-1">SOLUTIONS</span>
             </div>
           </Link>
 
@@ -38,6 +38,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
+                onClick={() => window.scrollTo(0, 0)}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
                   location.pathname === item.path ? "text-primary" : "text-foreground"
                 }`}
@@ -80,7 +81,10 @@ const Navigation = () => {
                   className={`block px-3 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-muted rounded-md ${
                     location.pathname === item.path ? "text-primary bg-muted" : "text-foreground"
                   }`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.scrollTo(0, 0);
+                  }}
                 >
                   {item.name}
                 </Link>

@@ -1,4 +1,5 @@
 import Navigation from "@/components/ui/navigation";
+import Footer from "@/components/footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -34,8 +35,30 @@ const Contact = () => {
     }
   ];
 
-  const handleWhatsApp = () => {
-    window.open("https://wa.me/254720496076?text=Hello%20VertaTech%2C%20I%27m%20interested%20in%20your%20services", "_blank");
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    const name = `${formData.get('firstName')} ${formData.get('lastName')}`;
+    const email = formData.get('email');
+    const phone = formData.get('phone');
+    const company = formData.get('company');
+    const service = formData.get('service');
+    const message = formData.get('message');
+    
+    const subject = `Service Inquiry from ${name}`;
+    const body = `Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Company: ${company}
+Service Interest: ${service}
+
+Message:
+${message}`;
+    
+    const mailtoLink = `mailto:info@vertatechsolutions.co.ke?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoLink, '_blank');
   };
 
   return (
@@ -68,42 +91,43 @@ const Contact = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" placeholder="Your first name" />
+                        <Input id="firstName" name="firstName" placeholder="Your first name" required />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" placeholder="Your last name" />
+                        <Input id="lastName" name="lastName" placeholder="Your last name" required />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="your.email@example.com" />
+                      <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" placeholder="+254 XXX XXX XXX" />
+                      <Input id="phone" name="phone" placeholder="+254 XXX XXX XXX" required />
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="company">Company (Optional)</Label>
-                      <Input id="company" placeholder="Your company name" />
+                      <Input id="company" name="company" placeholder="Your company name" />
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="service">Service Interest</Label>
-                      <select className="w-full p-3 border border-input rounded-md bg-background">
+                      <select name="service" className="w-full p-3 border border-input rounded-md bg-background" required>
                         <option value="">Select a service</option>
-                        <option value="networking">Networking Solutions</option>
-                        <option value="security">Security Systems</option>
-                        <option value="cctv">CCTV Installation</option>
-                        <option value="development">Web & Mobile Development</option>
-                        <option value="consultation">General Consultation</option>
+                        <option value="Web & System Development">Web & System Development</option>
+                        <option value="Mobile App Development">Mobile App Development</option>
+                        <option value="CCTV & Network Installations">CCTV & Network Installations</option>
+                        <option value="Biometric Systems">Biometric Systems</option>
+                        <option value="IT Security Solutions">IT Security Solutions</option>
+                        <option value="General Consultation">General Consultation</option>
                       </select>
                     </div>
                     
@@ -111,8 +135,10 @@ const Contact = () => {
                       <Label htmlFor="message">Message</Label>
                       <Textarea 
                         id="message" 
+                        name="message"
                         placeholder="Tell us about your project requirements..."
                         className="min-h-[120px]"
+                        required
                       />
                     </div>
                     
@@ -123,7 +149,7 @@ const Contact = () => {
                       <Button 
                         type="button" 
                         variant="outline" 
-                        onClick={handleWhatsApp}
+                        onClick={() => window.open("https://wa.me/254720496076?text=Hello%20VertaTech%2C%20I%27m%20interested%20in%20your%20services", "_blank")}
                         className="flex-1 bg-accent text-accent-foreground hover:bg-accent/90"
                       >
                         <MessageCircle className="h-4 w-4 mr-2" />
@@ -170,6 +196,7 @@ const Contact = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import Navigation from "@/components/ui/navigation";
+import Footer from "@/components/footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -211,6 +212,7 @@ const Partner = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };

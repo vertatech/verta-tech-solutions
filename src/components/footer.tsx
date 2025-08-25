@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Linkedin, Music } from "lucide-react";
 
 const Footer = () => {
   const quickLinks = [
@@ -32,38 +32,38 @@ const Footer = () => {
               Navigating Kenya's Digital Frontier. We specialize in providing robust solutions that empower you 
               to excel in today's rapidly evolving technological landscape.
             </p>
-            <div className="flex space-x-2">
+            <div className="flex space-x-3">
               <Button 
                 size="sm" 
                 variant="outline" 
-                className="border-background/20 text-background hover:bg-background/10"
+                className="border-background/20 text-background hover:bg-background/10 p-2"
                 onClick={() => window.open("https://www.facebook.com/people/VertaTech-Solutions/61552364856682/", "_blank")}
               >
-                FB
+                <Facebook className="h-4 w-4" />
               </Button>
               <Button 
                 size="sm" 
                 variant="outline" 
-                className="border-background/20 text-background hover:bg-background/10"
+                className="border-background/20 text-background hover:bg-background/10 p-2"
                 onClick={() => window.open("https://x.com/VertaTechSoln?t=Vz9wIEIunMtxVlReYBq6lA&s=09", "_blank")}
               >
-                X
+                <Twitter className="h-4 w-4" />
               </Button>
               <Button 
                 size="sm" 
                 variant="outline" 
-                className="border-background/20 text-background hover:bg-background/10"
+                className="border-background/20 text-background hover:bg-background/10 p-2"
                 onClick={() => window.open("https://www.linkedin.com/company/verta-tech-solutions/", "_blank")}
               >
-                LI
+                <Linkedin className="h-4 w-4" />
               </Button>
               <Button 
                 size="sm" 
                 variant="outline" 
-                className="border-background/20 text-background hover:bg-background/10"
+                className="border-background/20 text-background hover:bg-background/10 p-2"
                 onClick={() => window.open("https://www.tiktok.com/@vertatechsolutions?_t=ZM-8z8oZJs3eGG&_r=1", "_blank")}
               >
-                TT
+                <Music className="h-4 w-4" />
               </Button>
             </div>
           </div>

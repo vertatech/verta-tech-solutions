@@ -1,7 +1,10 @@
 import Navigation from "@/components/ui/navigation";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Target, Award, Globe } from "lucide-react";
+import { Users, Target, Award, Globe, Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import Footer from "@/components/footer";
+import bramwelImage from "@/assets/bramwel-ceo.png";
+import venaImage from "@/assets/vena-coo.png";
 
 const About = () => {
   const stats = [
@@ -146,28 +149,44 @@ const About = () => {
               </div>
               <div className="grid md:grid-cols-3 gap-8">
                 <Card className="p-6 text-center shadow-card hover:shadow-soft transition-all duration-300">
-                  <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">JK</span>
+                  <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-primary/20">
+                    <img src={bramwelImage} alt="Bramwel Obae" className="w-full h-full object-cover" />
                   </div>
-                  <h4 className="text-xl font-bold mb-2">John Kiprotich</h4>
+                  <h4 className="text-xl font-bold mb-2">Bramwel Obae</h4>
                   <p className="text-primary font-semibold mb-2">Chief Executive Officer</p>
-                  <p className="text-muted-foreground text-sm">Strategic leadership and business development visionary</p>
+                  <p className="text-muted-foreground text-sm mb-4">Strategic leadership and business development visionary</p>
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="p-2"
+                    onClick={() => window.open("https://www.linkedin.com/in/bramwel-obae1/", "_blank")}
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </Button>
                 </Card>
                 <Card className="p-6 text-center shadow-card hover:shadow-soft transition-all duration-300">
-                  <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">MW</span>
+                  <div className="w-32 h-32 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-2xl font-bold text-primary">NK</span>
                   </div>
-                  <h4 className="text-xl font-bold mb-2">Mary Wanjiku</h4>
+                  <h4 className="text-xl font-bold mb-2">Newton Kibiwot</h4>
                   <p className="text-primary font-semibold mb-2">Chief Technology Officer</p>
                   <p className="text-muted-foreground text-sm">Technology strategy and innovation leader</p>
                 </Card>
                 <Card className="p-6 text-center shadow-card hover:shadow-soft transition-all duration-300">
-                  <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">DM</span>
+                  <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-primary/20">
+                    <img src={venaImage} alt="Vena Okode" className="w-full h-full object-cover" />
                   </div>
-                  <h4 className="text-xl font-bold mb-2">David Muthoni</h4>
+                  <h4 className="text-xl font-bold mb-2">Vena Okode</h4>
                   <p className="text-primary font-semibold mb-2">Chief Operations Officer</p>
-                  <p className="text-muted-foreground text-sm">Operations excellence and efficiency expert</p>
+                  <p className="text-muted-foreground text-sm mb-4">Operations excellence and efficiency expert</p>
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="p-2"
+                    onClick={() => window.open("https://www.linkedin.com/in/vena-okode-b6b006196/", "_blank")}
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </Button>
                 </Card>
               </div>
             </div>

@@ -2,7 +2,7 @@ import Navigation from "@/components/ui/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, ArrowRight, X, Clock } from "lucide-react";
+import { Calendar, User, ArrowRight, X, Clock, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import Footer from "@/components/footer";
 import { useState } from "react";
 
@@ -55,6 +55,29 @@ const Blogs = () => {
   ];
 
   const [selectedPost, setSelectedPost] = useState(null);
+
+  const shareArticle = (post, platform) => {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(post.title);
+    const text = encodeURIComponent(post.excerpt);
+    
+    let shareUrl = '';
+    switch (platform) {
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        break;
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+        break;
+    }
+    
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+  };
 
   const handleReadMore = (post) => {
     setSelectedPost(post);
@@ -188,7 +211,7 @@ const Blogs = () => {
                 </div>
                 
                 <div className="mt-8 pt-6 border-t">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                         <User className="h-6 w-6 text-primary" />
@@ -198,6 +221,37 @@ const Blogs = () => {
                         <p className="text-sm text-muted-foreground">Published on {selectedPost.date} at {selectedPost.time}</p>
                       </div>
                     </div>
+                    
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm text-muted-foreground mr-2">Share:</span>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="p-2"
+                        onClick={() => shareArticle(selectedPost, 'facebook')}
+                      >
+                        <Facebook className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="p-2"
+                        onClick={() => shareArticle(selectedPost, 'twitter')}
+                      >
+                        <Twitter className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="p-2"
+                        onClick={() => shareArticle(selectedPost, 'linkedin')}
+                      >
+                        <Linkedin className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                  
+                  <div className="flex justify-center">
                     <Button onClick={handleCloseArticle}>
                       Close Article
                     </Button>

@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Linkedin, Music } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Linkedin, Video } from "lucide-react";
 
 const Footer = () => {
   const quickLinks = [
@@ -63,7 +63,7 @@ const Footer = () => {
                 className="border-background/20 text-background hover:bg-background/10 p-2"
                 onClick={() => window.open("https://www.tiktok.com/@vertatechsolutions?_t=ZM-8z8oZJs3eGG&_r=1", "_blank")}
               >
-                <Music className="h-4 w-4" />
+                <Video className="h-4 w-4" />
               </Button>
             </div>
           </div>

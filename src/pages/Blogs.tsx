@@ -2,7 +2,7 @@ import Navigation from "@/components/ui/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, ArrowRight, X, Clock, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Calendar, User, ArrowRight, X, Clock, Share2, Facebook, Twitter, Linkedin, Link, Copy } from "lucide-react";
 import Footer from "@/components/footer";
 import { useState } from "react";
 
@@ -57,21 +57,24 @@ const Blogs = () => {
   const [selectedPost, setSelectedPost] = useState(null);
 
   const shareArticle = (post, platform) => {
-    const url = encodeURIComponent(window.location.href);
+    const url = `${window.location.origin}/blogs/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
     const title = encodeURIComponent(post.title);
     const text = encodeURIComponent(post.excerpt);
     
     let shareUrl = '';
     switch (platform) {
       case 'facebook':
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
         break;
       case 'twitter':
-        shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${title}`;
         break;
       case 'linkedin':
-        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
         break;
+      case 'copy':
+        navigator.clipboard.writeText(url);
+        return;
     }
     
     if (shareUrl) {
@@ -224,6 +227,15 @@ const Blogs = () => {
                     
                     <div className="flex items-center gap-2">
                       <span className="text-sm text-muted-foreground mr-2">Share:</span>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="p-2"
+                        onClick={() => shareArticle(selectedPost, 'copy')}
+                        title="Copy article link"
+                      >
+                        <Copy className="h-4 w-4" />
+                      </Button>
                       <Button
                         size="sm"
                         variant="outline"

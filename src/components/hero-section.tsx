@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Shield, Eye, Smartphone } from "lucide-react";
-import vertatechLogo from "@/assets/vertatech-logo.png";
+import vertatechLogo from "/lovable-uploads/3fb719b7-6de4-44bf-a1d6-899c1c8c18b8.png";
 import techHeroBg from "@/assets/tech-hero-bg.jpg";
 
 const HeroSection = () => {

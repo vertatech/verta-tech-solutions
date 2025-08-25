@@ -57,7 +57,7 @@ const Blogs = () => {
   const [selectedPost, setSelectedPost] = useState(null);
 
   const shareArticle = (post, platform) => {
-    const url = `${window.location.origin}/blogs/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+    const url = `${window.location.origin}/blogs#${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
     const title = encodeURIComponent(post.title);
     const text = encodeURIComponent(post.excerpt);
     

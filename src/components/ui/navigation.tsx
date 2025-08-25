@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import vertatechLogo from "@/assets/vertatech-logo.png";
+import vertatechLogo from "/lovable-uploads/3fb719b7-6de4-44bf-a1d6-899c1c8c18b8.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

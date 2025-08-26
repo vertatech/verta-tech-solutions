@@ -53,7 +53,7 @@ const SuccessStories = () => {
         <section className="bg-hero-gradient py-20">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-hero-text mb-6">
-              Success Stories
+              Gallery and Success Stories
             </h1>
             <p className="text-xl text-hero-text/90 max-w-3xl mx-auto">
               Discover how we've helped businesses across Kenya achieve their digital transformation goals and drive measurable results.

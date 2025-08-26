@@ -61,9 +61,48 @@ const SuccessStories = () => {
           </div>
         </section>
 
+        {/* Gallery Section - YouTube Video */}
+        <section className="py-20 bg-muted/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Gallery</h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Take a look at our latest work and company highlights
+              </p>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <Card className="overflow-hidden shadow-card">
+                <div className="aspect-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/zfNGsJk7AGU?si=G56CAXslWTeodODj"
+                    title="VertaTech Solutions Company Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <CardContent className="p-6">
+                  <CardTitle className="text-xl mb-2">VertaTech Solutions - Company Overview</CardTitle>
+                  <CardDescription>
+                    Discover how VertaTech Solutions is transforming businesses across Kenya with innovative technology solutions.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Success Stories */}
         <section className="py-20">
           <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Real results from our satisfied clients across various industries
+              </p>
+            </div>
             <div className="space-y-12">
               {stories.map((story, index) => (
                 <Card key={index} className="shadow-card overflow-hidden">

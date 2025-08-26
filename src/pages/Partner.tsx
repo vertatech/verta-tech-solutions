@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 const Partner = () => {
-  const handleWhatsApp = () => {
+  const handleGetInTouch = () => {
     window.open("https://wa.me/254720496076?text=Hello%20VertaTech%2C%20I%27m%20interested%20in%20partnership%20opportunities", "_blank");
   };
 
@@ -176,8 +176,8 @@ const Partner = () => {
                     Our flexible framework accommodates various collaboration models.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button onClick={handleWhatsApp} size="lg" className="bg-accent hover:bg-accent/90">
-                      WhatsApp Discussion
+                    <Button onClick={handleGetInTouch} size="lg" className="bg-accent hover:bg-accent/90">
+                      Get In Touch
                     </Button>
                     <Button onClick={handleEmail} variant="outline" size="lg">
                       Email Partnership Team

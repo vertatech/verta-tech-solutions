@@ -74,11 +74,10 @@ const Career = () => {
                   Send Your CV
                 </Button>
                 <Button 
-                  onClick={() => window.open("https://wa.me/254720496076?text=Hello%2C%20I%27m%20interested%20in%20future%20career%20opportunities", "_blank")}
                   variant="outline" 
                   size="lg"
                 >
-                  WhatsApp Us
+                  Get In Touch
                 </Button>
               </div>
             </div>

@@ -150,11 +150,10 @@ ${message}`;
                       <Button 
                         type="button" 
                         variant="outline" 
-                        onClick={() => window.open("https://wa.me/254720496076?text=Hello%20VertaTech%2C%20I%27m%20interested%20in%20your%20services", "_blank")}
-                        className="flex-1 bg-accent text-accent-foreground hover:bg-accent/90"
+                        className="flex-1"
                       >
                         <MessageCircle className="h-4 w-4 mr-2" />
-                        WhatsApp Us
+                        Get Support
                       </Button>
                     </div>
                   </form>

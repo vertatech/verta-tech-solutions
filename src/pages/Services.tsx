@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Network, Shield, Eye, Smartphone, Server, Wifi, Camera, Code } from "lucide-react";
 
 const Services = () => {
-  // WhatsApp handler with service-specific message
+  // Contact handler for service inquiries
   const handleGetService = (serviceName) => {
     const message = `Hello VertaTech! I'm interested in your ${serviceName} service. Could you please provide more information?`;
     window.open(`https://wa.me/254720496076?text=${encodeURIComponent(message)}`, "_blank");

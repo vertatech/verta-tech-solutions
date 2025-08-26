@@ -1,4 +1,5 @@
 import Navigation from "@/components/ui/navigation";
+import LiveChat from "@/components/live-chat";
 import Footer from "@/components/footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -122,6 +123,7 @@ const Services = () => {
           </div>
         </section>
       </main>
+      <LiveChat />
       <Footer />
     </div>
   );

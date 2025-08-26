@@ -2,6 +2,7 @@ import Navigation from "@/components/ui/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Award, Globe, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LiveChat from "@/components/live-chat";
 import Footer from "@/components/footer";
 import bramwelImage from "@/assets/bramwel-ceo.png";
 import venaImage from "@/assets/vena-coo.png";
@@ -193,6 +194,7 @@ const About = () => {
           </div>
         </section>
       </main>
+      <LiveChat />
       <Footer />
     </div>
   );

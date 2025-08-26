@@ -11,9 +11,6 @@ const HeroSection = () => {
     { icon: Smartphone, label: "System, Web & Mobile Apps" },
   ];
 
-  const handleWhatsApp = () => {
-    window.open("https://wa.me/254720496076?text=Hello%20VertaTech%2C%20I%27m%20interested%20in%20your%20services", "_blank");
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -90,14 +87,6 @@ const HeroSection = () => {
             className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 min-w-[140px] hover:scale-105 transition-all duration-300"
           >
             Learn More
-          </Button>
-          
-          <Button 
-            size="lg" 
-            onClick={handleWhatsApp}
-            className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-button min-w-[140px] hover:scale-105 transition-all duration-300 animate-pulse"
-          >
-            WhatsApp Us 📱
           </Button>
         </div>
 

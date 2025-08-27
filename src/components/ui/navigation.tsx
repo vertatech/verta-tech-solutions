@@ -55,7 +55,7 @@ const Navigation = () => {
               <span>+254720496076</span>
             </div>
             <Button variant="default" className="bg-primary hover:bg-primary/90 shadow-button">
-              Get Quote
+              Get Service
             </Button>
           </div>
 
@@ -95,7 +95,7 @@ const Navigation = () => {
                   <span>+254720496076</span>
                 </div>
                 <Button variant="default" className="w-full bg-primary hover:bg-primary/90">
-                  Get Quote
+                  Get Service
                 </Button>
               </div>
             </div>

@@ -149,115 +149,62 @@
   }
   
   /* Professional Animations */
-  .animate-bounce-in {
-    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-    opacity: 0;
-  }
-  
-  .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0;
-  }
-  
-  .animate-slide-in-left {
-    animation: slideInLeft 0.6s ease-out forwards;
-    opacity: 0;
-  }
-  
-  .animate-slide-in-right {
-    animation: slideInRight 0.6s ease-out forwards;
-    opacity: 0;
-  }
-  
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
-    opacity: 0;
-  }
-  
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .animate-pulse-soft {
-    animation: pulseSoft 2s ease-in-out infinite;
-  }
-  
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-}
-
-@keyframes bounceIn {
+  @keyframes bounceIn {
   0% {
-    opacity: 0;
     transform: scale(0.3) translate3d(0, 0, 0);
   }
   50% {
-    opacity: 1;
     transform: scale(1.05);
   }
   70% {
     transform: scale(0.9);
   }
   100% {
-    opacity: 1;
     transform: scale(1) translate3d(0, 0, 0);
   }
 }
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
+    transform: translateY(0);
   }
   to {
-    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeInUp {
   from {
-    opacity: 0;
     transform: translate3d(0, 30px, 0);
   }
   to {
-    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes slideInLeft {
   from {
-    opacity: 0;
     transform: translate3d(-30px, 0, 0);
   }
   to {
-    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes slideInRight {
   from {
-    opacity: 0;
     transform: translate3d(30px, 0, 0);
   }
   to {
-    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes scaleIn {
   from {
-    opacity: 0;
     transform: scale(0.8);
   }
   to {
-    opacity: 1;
     transform: scale(1);
   }
 }

@@ -76,7 +76,7 @@ const Footer = () => {
                 <Video className="h-5 w-5" />
               </a>
               <a 
-                href="https://youtu.be/zfNGsJk7AGU?si=G56CAXslWTeodODj"
+                href="https://www.youtube.com/@VertaTechSolutions"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center text-background hover:bg-background/20 transition-colors"

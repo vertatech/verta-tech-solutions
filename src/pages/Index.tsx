@@ -10,6 +10,34 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <WorkShowcase />
+      
+      {/* YouTube Video Section */}
+      <section className="py-16 bg-subtle-gradient">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Watch Our Story
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Discover how VertaTech Solutions is transforming Kenya's digital landscape
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-soft">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/zfNGsJk7AGU"
+                title="VertaTech Solutions - Company Overview"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <LiveChat />
       <Footer />
     </div>

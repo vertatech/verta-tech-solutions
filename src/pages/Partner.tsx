@@ -201,7 +201,11 @@ const Partner = () => {
                   Join our growing network of partners and unlock new opportunities for business growth and success.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="bg-secondary text-primary hover:bg-secondary/90 shadow-button">
+                  <Button 
+                    size="lg" 
+                    className="bg-secondary text-primary hover:bg-secondary/90 shadow-button"
+                    onClick={() => window.open("mailto:partnerships@vertatechsolutions.co.ke?subject=Partnership%20Application", "_blank")}
+                  >
                     Apply to Partner
                   </Button>
                   <Button size="lg" variant="outline" className="border-hero-text/30 text-hero-text hover:bg-hero-text/10">

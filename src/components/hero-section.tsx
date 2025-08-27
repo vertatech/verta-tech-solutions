@@ -76,6 +76,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="bg-secondary text-primary hover:bg-secondary/90 shadow-button group min-w-[140px] hover:scale-105 transition-all duration-300"
+            onClick={() => window.location.href = '/services'}
           >
             Get Started
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -85,6 +86,7 @@ const HeroSection = () => {
             size="lg" 
             variant="outline" 
             className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 min-w-[140px] hover:scale-105 transition-all duration-300"
+            onClick={() => window.location.href = '/contact'}
           >
             Learn More
           </Button>

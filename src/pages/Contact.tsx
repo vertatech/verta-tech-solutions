@@ -15,25 +15,25 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+254 720 496 076", "+254 733 123 456"],
+      details: ["+254 720 496 076", "+254 724 728 165"],
       description: "Call us during business hours"
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@vertatech.co.ke", "support@vertatech.co.ke"],
+      details: ["info@vertatech.com", "bramwel@vertatech.com"],
       description: "We'll respond within 24 hours"
     },
     {
       icon: MapPin,
       title: "Office Location",
-      details: ["Nairobi, Kenya", "Westlands Business District"],
+      details: ["Nairobi, Kenya", "Westlands"],
       description: "Visit us for in-person consultations"
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Mon - Fri: 8:00 AM - 6:00 PM", "Sat: 9:00 AM - 2:00 PM"],
+      details: ["Mon - Fri: 8:00 AM - 6:00 PM", "Sat: 9:00 AM - 4:00 PM"],
       description: "Emergency support available 24/7"
     }
   ];

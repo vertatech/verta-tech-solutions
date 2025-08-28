@@ -139,7 +139,7 @@ const Footer = () => {
                 <Clock className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
                 <span className="text-background/80 text-sm">
                   Mon - Fri: 8:00 AM - 6:00 PM<br />
-                  Sat: 9:00 AM - 2:00 PM
+                  Sat: 9:00 AM - 4:00 PM
                 </span>
               </div>
             </div>

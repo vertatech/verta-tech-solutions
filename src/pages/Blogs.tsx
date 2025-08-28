@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowRight, X, Clock, Share2, Facebook, Twitter, Linkedin, Link, Copy } from "lucide-react";
 import Footer from "@/components/footer";
+import SEOHead from "@/components/seo-head";
 import { useState } from "react";
+import techBg from "@/assets/tech-bg-1.jpg";
 
 const Blogs = () => {
   const posts = [
@@ -58,23 +60,23 @@ const Blogs = () => {
   const [selectedPost, setSelectedPost] = useState(null);
 
   const shareArticle = (post, platform) => {
-    const url = `${window.location.origin}/blogs#${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-    const title = encodeURIComponent(post.title);
-    const text = encodeURIComponent(post.excerpt);
+    const url = `${window.location.origin}/blogs`;
+    const title = encodeURIComponent(`${post.title} - VertaTech Solutions`);
+    const text = encodeURIComponent(`${post.excerpt} Read more at VertaTech Solutions:`);
     
     let shareUrl = '';
     switch (platform) {
       case 'facebook':
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${text}`;
         break;
       case 'twitter':
-        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${title}`;
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${text}`;
         break;
       case 'linkedin':
-        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&title=${title}&summary=${text}`;
         break;
       case 'copy':
-        navigator.clipboard.writeText(url);
+        navigator.clipboard.writeText(`${post.title}\n\n${post.excerpt}\n\nRead more: ${url}`);
         return;
     }
     
@@ -93,16 +95,25 @@ const Blogs = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Tech Blog & Insights - VertaTech Solutions Kenya"
+        description="Stay updated with the latest technology trends, cybersecurity insights, and digital transformation best practices from Kenya's leading IT experts."
+        keywords="technology blog Kenya, IT insights, cybersecurity tips, digital transformation, networking guides, CCTV installation tips, software development trends"
+        canonical="https://vertatechsolutions.co.ke/blogs"
+      />
       <Navigation />
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-hero-gradient py-20">
+        <section 
+          className="relative py-20 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${techBg})` }}
+        >
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-hero-text mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
               Tech Insights & Blog
             </h1>
-            <p className="text-xl text-hero-text/90 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Stay updated with the latest technology trends, insights, and best practices from our expert team.
             </p>
           </div>

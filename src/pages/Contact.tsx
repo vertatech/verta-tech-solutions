@@ -1,12 +1,14 @@
 import Navigation from "@/components/ui/navigation";
 import LiveChat from "@/components/live-chat";
 import Footer from "@/components/footer";
+import SEOHead from "@/components/seo-head";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import contactBg from "@/assets/contact-bg.jpg";
 
 const Contact = () => {
   const contactInfo = [
@@ -64,27 +66,36 @@ ${message}`;
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Contact VertaTech Solutions - Get Expert IT Support in Kenya"
+        description="Contact VertaTech Solutions for expert IT services, CCTV installation, networking, and digital transformation support across Kenya. Get in touch today!"
+        keywords="contact VertaTech Kenya, IT support, technology consultation, CCTV installation contact, networking services Kenya"
+        canonical="https://vertatechsolutions.co.ke/contact"
+      />
       <Navigation />
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-hero-gradient py-20">
+        <section 
+          className="relative py-20 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${contactBg})` }}
+        >
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-hero-text mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
               Get In Touch
             </h1>
-            <p className="text-xl text-hero-text/90 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Ready to transform your business with cutting-edge technology? Let's discuss your project and find the perfect solution together.
             </p>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section className="py-20">
+        <section className="py-20 bg-subtle-gradient">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact Form */}
-              <Card className="shadow-card">
+              <Card className="shadow-card animate-fade-in">
                 <CardHeader>
                   <CardTitle className="text-2xl">Send us a Message</CardTitle>
                   <CardDescription>
@@ -161,7 +172,7 @@ ${message}`;
               </Card>
 
               {/* Contact Information */}
-              <div className="space-y-6">
+              <div className="space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <div className="mb-8">
                   <h2 className="text-3xl font-bold mb-4">Contact Information</h2>
                   <p className="text-lg text-muted-foreground">
@@ -170,7 +181,11 @@ ${message}`;
                 </div>
 
                 {contactInfo.map((info, index) => (
-                  <Card key={index} className="shadow-card">
+                  <Card 
+                    key={index} 
+                    className="shadow-card animate-scale-in hover-scale" 
+                    style={{ animationDelay: `${0.1 * (index + 3)}s` }}
+                  >
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
                         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">

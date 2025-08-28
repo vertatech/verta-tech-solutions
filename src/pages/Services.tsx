@@ -1,9 +1,11 @@
 import Navigation from "@/components/ui/navigation";
 import LiveChat from "@/components/live-chat";
 import Footer from "@/components/footer";
+import SEOHead from "@/components/seo-head";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Network, Shield, Eye, Smartphone, Server, Wifi, Camera, Code } from "lucide-react";
+import servicesBg from "@/assets/services-bg.jpg";
 
 const Services = () => {
   // Contact handler for service inquiries
@@ -65,27 +67,40 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Technology Services - VertaTech Solutions Kenya"
+        description="Comprehensive IT services including web development, mobile apps, CCTV systems, networking, and digital transformation solutions across Kenya."
+        keywords="IT services Kenya, web development, mobile app development, CCTV installation, networking services, business consultation, ICT equipment"
+        canonical="https://vertatechsolutions.co.ke/services"
+      />
       <Navigation />
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-hero-gradient py-20">
+        <section 
+          className="relative py-20 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${servicesBg})` }}
+        >
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-hero-text mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
               Our Services
             </h1>
-            <p className="text-xl text-hero-text/90 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Comprehensive technology solutions designed to transform your business and drive digital success.
             </p>
           </div>
         </section>
 
         {/* Services Grid */}
-        <section className="py-20">
+        <section className="py-20 bg-subtle-gradient">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="shadow-card hover:shadow-soft transition-all duration-300">
+                <Card 
+                  key={index} 
+                  className="shadow-card hover:shadow-soft transition-all duration-300 animate-scale-in hover-scale"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
                   <CardHeader>
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">

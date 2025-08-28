@@ -4,8 +4,11 @@ import { Users, Target, Award, Globe, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LiveChat from "@/components/live-chat";
 import Footer from "@/components/footer";
+import SEOHead from "@/components/seo-head";
 import bramwelImage from "@/assets/bramwel-ceo.png";
 import venaImage from "@/assets/vena-coo.png";
+import jamesImage from "@/assets/james-cto.jpg";
+import aboutBg from "@/assets/about-bg.jpg";
 
 const About = () => {
   const stats = [
@@ -17,16 +20,25 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="About VertaTech Solutions - Leading IT Company in Kenya"
+        description="Learn about VertaTech Solutions, Kenya's premier technology company specializing in networking, cybersecurity, CCTV systems, and digital transformation services."
+        keywords="about VertaTech, IT company Kenya, technology solutions, networking experts, cybersecurity specialists, digital transformation"
+        canonical="https://vertatechsolutions.co.ke/about"
+      />
       <Navigation />
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-hero-gradient py-20">
+        <section 
+          className="relative py-20 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${aboutBg})` }}
+        >
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-hero-text mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
               About VertaTech Solutions
             </h1>
-            <p className="text-xl text-hero-text/90 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Leading Kenya's digital transformation with innovative technology solutions and expert consulting services.
             </p>
           </div>
@@ -166,12 +178,20 @@ const About = () => {
                   </Button>
                 </Card>
                 <Card className="p-6 text-center shadow-card hover:shadow-soft transition-all duration-300">
-                  <div className="w-32 h-32 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">NK</span>
+                  <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-primary/20">
+                    <img src={jamesImage} alt="James" className="w-full h-full object-cover" />
                   </div>
-                  <h4 className="text-xl font-bold mb-2">Newton Kibiwot</h4>
+                  <h4 className="text-xl font-bold mb-2">James</h4>
                   <p className="text-primary font-semibold mb-2">Chief Technology Officer</p>
-                  <p className="text-muted-foreground text-sm">Technology strategy and innovation leader</p>
+                  <p className="text-muted-foreground text-sm mb-4">Technology strategy and innovation leader</p>
+                  <Button 
+                    size="sm" 
+                    variant="outline" 
+                    className="p-2"
+                    onClick={() => window.open("https://www.linkedin.com/in/james-tech-expert/", "_blank")}
+                  >
+                    <Linkedin className="h-4 w-4" />
+                  </Button>
                 </Card>
                 <Card className="p-6 text-center shadow-card hover:shadow-soft transition-all duration-300">
                   <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-primary/20">

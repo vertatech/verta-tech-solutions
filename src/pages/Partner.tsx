@@ -1,6 +1,7 @@
 import Navigation from "@/components/ui/navigation";
 import LiveChat from "@/components/live-chat";
 import Footer from "@/components/footer";
+import SEOHead from "@/components/seo-head";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +9,7 @@ import {
   Handshake, TrendingUp, Users, Award, Globe, Target, 
   CheckCircle, Building, Brain, DollarSign, Zap, Shield 
 } from "lucide-react";
+import partnerBg from "@/assets/partner-bg.jpg";
 
 const Partner = () => {
   const handleGetInTouch = () => {
@@ -73,32 +75,41 @@ const Partner = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead 
+        title="Partner with VertaTech Solutions - Investment & Partnership Opportunities Kenya"
+        description="Join VertaTech Solutions as a strategic partner. Explore investment opportunities, joint ventures, and partnership programs with Kenya's leading technology company."
+        keywords="VertaTech partnership, technology investment Kenya, business partnership opportunities, IT company investment, startup partnership"
+        canonical="https://vertatechsolutions.co.ke/partner"
+      />
       <Navigation />
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-hero-gradient py-20">
+        <section 
+          className="relative py-20 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${partnerBg})` }}
+        >
           <div className="container mx-auto px-4 text-center">
             <div className="mb-8">
-              <h1 className="text-4xl md:text-6xl font-bold text-hero-text mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
                 🚀 Partner With Us
               </h1>
-              <h2 className="text-2xl md:text-3xl text-hero-text/90 mb-6">
+              <h2 className="text-2xl md:text-3xl text-white/90 mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 Join VertaTech Solutions in Powering East Africa's Digital Future
               </h2>
             </div>
-            <p className="text-lg text-hero-text/80 max-w-4xl mx-auto mb-8">
+            <p className="text-lg text-white/80 max-w-4xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               At VertaTech Solutions, we're building smart, practical technology solutions that drive real-world transformation across East Africa. As a dynamic Kenyan startup founded on innovation and excellence, we've already delivered measurable results for our clients while establishing ourselves as a trusted technology partner.
             </p>
             
             {/* Achievement Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto animate-scale-in" style={{ animationDelay: '0.6s' }}>
               {achievements.map((achievement, index) => (
                 <div key={index} className="text-center">
                   <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
                     {achievement.number}
                   </div>
-                  <div className="text-hero-text/80 text-sm">
+                  <div className="text-white/80 text-sm">
                     {achievement.label}
                   </div>
                 </div>
@@ -108,9 +119,9 @@ const Partner = () => {
         </section>
 
         {/* Why Partner With Us */}
-        <section className="py-20">
+        <section className="py-20 bg-subtle-gradient">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Partner With Us?</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Strong growth trajectory supported by East Africa's expanding digital economy
@@ -119,7 +130,11 @@ const Partner = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
               {whyPartnerBenefits.map((benefit, index) => (
-                <Card key={index} className="shadow-card hover:shadow-soft transition-all duration-300">
+                <Card 
+                  key={index} 
+                  className="shadow-card hover:shadow-soft transition-all duration-300 animate-scale-in hover-scale"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -138,9 +153,9 @@ const Partner = () => {
         </section>
 
         {/* Partnership Opportunities */}
-        <section className="py-20 bg-subtle-gradient">
+        <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Partnering Opportunities</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 We welcome strategic partnerships from diverse backgrounds — angel investors, experienced advisors, 
@@ -150,7 +165,11 @@ const Partner = () => {
 
             <div className="grid md:grid-cols-2 gap-8 mb-16">
               {partnershipOpportunities.map((opportunity, index) => (
-                <Card key={index} className="shadow-card hover:shadow-soft transition-all duration-300">
+                <Card 
+                  key={index} 
+                  className="shadow-card hover:shadow-soft transition-all duration-300 animate-scale-in hover-scale"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -166,7 +185,7 @@ const Partner = () => {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="text-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
               <Card className="max-w-2xl mx-auto shadow-card">
                 <CardContent className="p-8">
                   <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
@@ -190,9 +209,9 @@ const Partner = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20">
+        <section className="py-20 bg-subtle-gradient">
           <div className="container mx-auto px-4">
-            <Card className="bg-hero-gradient text-center shadow-soft">
+            <Card className="bg-hero-gradient text-center shadow-soft animate-fade-in">
               <CardContent className="p-12">
                 <h2 className="text-3xl font-bold text-hero-text mb-4">
                   Ready to Start Your Partnership Journey?
@@ -203,12 +222,18 @@ const Partner = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
                     size="lg" 
-                    className="bg-secondary text-primary hover:bg-secondary/90 shadow-button"
+                    className="bg-secondary text-primary hover:bg-secondary/90 shadow-button animate-scale-in"
+                    style={{ animationDelay: '0.2s' }}
                     onClick={() => window.open("mailto:partnerships@vertatechsolutions.co.ke?subject=Partnership%20Application", "_blank")}
                   >
                     Apply to Partner
                   </Button>
-                  <Button size="lg" variant="outline" className="border-hero-text/30 text-hero-text hover:bg-hero-text/10">
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 animate-scale-in"
+                    style={{ animationDelay: '0.4s' }}
+                  >
                     Download Partner Kit
                   </Button>
                 </div>

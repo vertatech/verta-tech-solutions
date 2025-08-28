@@ -12,9 +12,9 @@ import aboutBg from "@/assets/about-bg.jpg";
 
 const About = () => {
   const stats = [
-    { icon: Users, label: "Happy Clients", value: "500+" },
-    { icon: Target, label: "Projects Completed", value: "1000+" },
-    { icon: Award, label: "Years Experience", value: "10+" },
+    { icon: Users, label: "Happy Clients", value: "100+" },
+    { icon: Target, label: "Projects Completed", value: "50+" },
+    { icon: Award, label: "Years Experience", value: "5+" },
     { icon: Globe, label: "Counties Served", value: "20+" }
   ];
 
@@ -24,7 +24,7 @@ const About = () => {
         title="About VertaTech Solutions - Leading IT Company in Kenya"
         description="Learn about VertaTech Solutions, Kenya's premier technology company specializing in networking, cybersecurity, CCTV systems, and digital transformation services."
         keywords="about VertaTech, IT company Kenya, technology solutions, networking experts, cybersecurity specialists, digital transformation"
-        canonical="https://vertatechsolutions.co.ke/about"
+        canonical="https://vertatechsolutions.com/about"
       />
       <Navigation />
       

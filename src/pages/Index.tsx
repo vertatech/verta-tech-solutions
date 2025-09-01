@@ -56,7 +56,7 @@ const Index = () => {
       {/* Dynamic Features Section */}
       <section className="py-20 bg-subtle-gradient">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Why Choose VertaTech Solutions?
             </h2>
@@ -69,8 +69,7 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card 
                 key={index} 
-                className="p-6 text-center shadow-card hover:shadow-soft transition-all duration-300 animate-scale-in hover-scale"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="p-6 text-center shadow-card hover:shadow-soft transition-shadow duration-300"
               >
                 <CardContent className="p-0">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -90,7 +89,7 @@ const Index = () => {
       {/* YouTube Video Section with Autoplay */}
       <section className="py-16 bg-subtle-gradient overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12 animate-fade-in-up">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Watch Our Story
             </h2>
@@ -99,11 +98,11 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto animate-scale-in" style={{ animationDelay: '0.3s' }}>
-            <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-500 group">
+          <div className="max-w-4xl mx-auto">
+            <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-soft">
               <iframe
                 ref={videoRef}
-                className="absolute top-0 left-0 w-full h-full group-hover:scale-105 transition-transform duration-500"
+                className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/zfNGsJk7AGU?enablejsapi=1&autoplay=0&mute=1"
                 title="VertaTech Solutions - Company Overview"
                 frameBorder="0"

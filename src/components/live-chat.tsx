@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { MessageSquare, Phone, Headphones } from "lucide-react";
 
 const LiveChat = () => {
   const handleLiveChat = () => {
@@ -8,15 +8,18 @@ const LiveChat = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50">
       <div className="flex flex-col items-center">
-        <span className="text-xs font-medium text-foreground mb-2 bg-background/90 px-2 py-1 rounded-md shadow-sm">
-          Live Chat
+        <span className="text-sm font-medium text-foreground mb-3 bg-background/90 px-3 py-2 rounded-lg shadow-md">
+          Live Chat Support
         </span>
         <button
           onClick={handleLiveChat}
-          className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+          className="bg-green-500 hover:bg-green-600 text-white p-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
           aria-label="Start live chat via WhatsApp"
         >
-          <MessageCircle className="h-6 w-6 group-hover:animate-pulse" />
+          <div className="flex items-center justify-center">
+            <MessageSquare className="h-8 w-8 group-hover:animate-pulse" />
+            <Headphones className="h-6 w-6 ml-1 group-hover:animate-bounce" />
+          </div>
         </button>
       </div>
     </div>

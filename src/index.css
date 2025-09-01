@@ -39,11 +39,15 @@
 
     /* VertaTech Custom Design Tokens */
     --gradient-hero: linear-gradient(135deg, hsl(238 75% 62%), hsl(188 85% 52%));
-    --gradient-subtle: linear-gradient(180deg, hsl(238 75% 62% / 0.05), hsl(188 85% 52% / 0.05));
+    --gradient-subtle: linear-gradient(180deg, hsl(238 75% 62% / 0.08), hsl(188 85% 52% / 0.08));
+    --gradient-professional: linear-gradient(135deg, hsl(222 47% 11%), hsl(231 36% 17%));
     --teal: 188 85% 52%; /* Teal #06B6D4 */
-    --nav-bg: 0 0% 100% / 0.95;
-    --hero-text: 0 0% 100%;
-    --service-icon-bg: 0 0% 100% / 0.1;
+    --nav-bg: 222 47% 11% / 0.95; /* Professional dark blue */
+    --hero-text: 210 40% 96%; /* Off-white for better readability */
+    --service-icon-bg: 238 75% 62% / 0.1;
+    --professional-bg: 222 47% 11%; /* Deep blue */
+    --professional-secondary: 231 36% 17%; /* Lighter professional blue */
+    --professional-accent: 210 40% 96%; /* Light professional gray */
     
     /* Shadows */
     --shadow-soft: 0 4px 20px hsl(238 75% 62% / 0.15);

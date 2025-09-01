@@ -57,6 +57,9 @@ export default {
 				'nav-bg': 'hsl(var(--nav-bg))',
 				'teal': 'hsl(var(--teal))',
 				'service-icon-bg': 'hsl(var(--service-icon-bg))',
+				'professional-bg': 'hsl(var(--professional-bg))',
+				'professional-secondary': 'hsl(var(--professional-secondary))',
+				'professional-accent': 'hsl(var(--professional-accent))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -76,6 +79,7 @@ export default {
 			backgroundImage: {
 				'hero-gradient': 'var(--gradient-hero)',
 				'subtle-gradient': 'var(--gradient-subtle)',
+				'professional-gradient': 'var(--gradient-professional)',
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',

@@ -42,7 +42,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-professional-bg">
       <SEOHead 
         title="VertaTech Solutions - Leading Kenya's Digital Transformation"
         description="Expert technology solutions in Kenya. Specializing in networking, security systems, CCTV installation, custom software development, and digital transformation services."
@@ -54,13 +54,13 @@ const Index = () => {
       <HeroSection />
       
       {/* Dynamic Features Section */}
-      <section className="py-20 bg-subtle-gradient">
+      <section className="py-20 bg-gradient-professional">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-professional-accent mb-6">
               Why Choose VertaTech Solutions?
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-professional-accent/80 max-w-3xl mx-auto">
               We deliver comprehensive technology solutions that drive business growth and digital transformation across Kenya
             </p>
           </div>
@@ -69,14 +69,14 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card 
                 key={index} 
-                className="p-6 text-center shadow-card hover:shadow-soft transition-shadow duration-300"
+                className="p-6 text-center bg-professional-secondary/50 border-primary/20 shadow-card hover:shadow-soft transition-shadow duration-300 backdrop-blur-sm"
               >
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <feature.icon className="h-8 w-8 text-primary" />
+                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <feature.icon className="h-8 w-8 text-accent" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-professional-accent">{feature.title}</h3>
+                  <p className="text-professional-accent/70">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -87,19 +87,19 @@ const Index = () => {
       <WorkShowcase />
       
       {/* YouTube Video Section with Autoplay */}
-      <section className="py-16 bg-subtle-gradient overflow-hidden">
+      <section className="py-16 bg-professional-secondary overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-professional-accent mb-4">
               Watch Our Story
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-professional-accent/80 max-w-2xl mx-auto">
               Discover how VertaTech Solutions is transforming Kenya's digital landscape
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-soft">
+            <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-soft border border-primary/20">
               <iframe
                 ref={videoRef}
                 className="absolute top-0 left-0 w-full h-full"

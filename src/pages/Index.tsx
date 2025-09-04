@@ -52,37 +52,6 @@ const Index = () => {
       
       <Navigation />
       <HeroSection />
-      
-      {/* Dynamic Features Section */}
-      <section className="py-20 bg-gradient-professional">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-professional-accent mb-6">
-              Why Choose VertaTech Solutions?
-            </h2>
-            <p className="text-lg text-professional-accent/80 max-w-3xl mx-auto">
-              We deliver comprehensive technology solutions that drive business growth and digital transformation across Kenya
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {features.map((feature, index) => (
-              <Card 
-                key={index} 
-                className="p-6 text-center bg-professional-secondary/50 border-primary/20 shadow-card hover:shadow-soft transition-shadow duration-300 backdrop-blur-sm"
-              >
-                <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <feature.icon className="h-8 w-8 text-accent" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-professional-accent">{feature.title}</h3>
-                  <p className="text-professional-accent/70">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <WorkShowcase />
       
@@ -110,6 +79,37 @@ const Index = () => {
                 allowFullScreen
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dynamic Features Section */}
+      <section className="py-20 bg-gradient-professional">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-professional-accent mb-6">
+              Why Choose VertaTech Solutions?
+            </h2>
+            <p className="text-lg text-professional-accent/80 max-w-3xl mx-auto">
+              We deliver comprehensive technology solutions that drive business growth and digital transformation across Kenya
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {features.map((feature, index) => (
+              <Card 
+                key={index} 
+                className="p-6 text-center bg-professional-secondary/50 border-primary/20 shadow-card hover:shadow-soft transition-shadow duration-300 backdrop-blur-sm"
+              >
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <feature.icon className="h-8 w-8 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-professional-accent">{feature.title}</h3>
+                  <p className="text-professional-accent/70">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

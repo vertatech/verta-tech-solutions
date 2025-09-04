@@ -7,6 +7,7 @@ import SEOHead from "@/components/seo-head";
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Network, Camera, Code, Users, Target } from "lucide-react";
+import webDevHeroBg from "@/assets/web-dev-hero-bg.jpg";
 
 const Index = () => {
   const videoRef = useRef(null);
@@ -42,7 +43,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-professional-bg">
+    <div className="min-h-screen bg-professional-bg bg-cover bg-center bg-fixed relative" style={{backgroundImage: `url(${webDevHeroBg})`}}>
+      <div className="absolute inset-0 bg-professional-bg/80 backdrop-blur-[1px]"></div>
+      <div className="relative z-10">
       <SEOHead 
         title="VertaTech Solutions - Leading Kenya's Digital Transformation"
         description="Expert technology solutions in Kenya. Specializing in networking, security systems, CCTV installation, custom software development, and digital transformation services."
@@ -116,6 +119,7 @@ const Index = () => {
       
       <LiveChat />
       <Footer />
+      </div>
     </div>
   );
 };

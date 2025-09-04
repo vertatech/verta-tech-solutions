@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Shield, Eye, Smartphone } from "lucide-react";
 import vertatechLogo from "/lovable-uploads/3fb719b7-6de4-44bf-a1d6-899c1c8c18b8.png";
-import techHeroBg from "@/assets/tech-hero-bg.jpg";
+import techHeroSectionBg from "@/assets/tech-hero-section-bg.jpg";
 
 const HeroSection = () => {
   const services = [
@@ -18,7 +18,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-hero-gradient"
         style={{
-          backgroundImage: `linear-gradient(135deg, rgba(79, 70, 229, 0.9), rgba(6, 182, 212, 0.9)), url(${techHeroBg})`,
+          backgroundImage: `linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(6, 182, 212, 0.8)), url(${techHeroSectionBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'

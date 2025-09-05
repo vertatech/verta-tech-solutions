@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Network, Shield, Eye, Smartphone } from "lucide-react";
+import { ArrowRight, Network, Shield, Eye, Smartphone, Phone } from "lucide-react";
 import vertatechLogo from "/lovable-uploads/3fb719b7-6de4-44bf-a1d6-899c1c8c18b8.png";
 import techHeroSectionBg from "@/assets/tech-hero-section-bg.jpg";
 
@@ -71,12 +71,25 @@ const HeroSection = () => {
           ))}
         </div>
 
+        {/* Contact Information */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+          <Button 
+            size="lg" 
+            variant="outline"
+            className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 min-w-[180px] hover:scale-105 transition-all duration-300 group"
+            onClick={() => window.open("tel:+254720496076", "_self")}
+          >
+            <Phone className="mr-2 h-4 w-4 group-hover:ring-2 group-hover:ring-hero-text/50 rounded-full transition-all" />
+            +254 720 496 076
+          </Button>
+        </div>
+
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '1s' }}>
           <Button 
             size="lg" 
             className="bg-secondary text-primary hover:bg-secondary/90 shadow-button group min-w-[140px] hover:scale-105 transition-all duration-300"
-            onClick={() => window.location.href = '/services'}
+            onClick={() => window.open("https://wa.me/254720496076?text=Hello%20VertaTech%2C%20I%27m%20interested%20in%20your%20services", "_blank")}
           >
             Get Started
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

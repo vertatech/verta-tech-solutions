@@ -71,19 +71,6 @@ const HeroSection = () => {
           ))}
         </div>
 
-        {/* Contact Information */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-          <Button 
-            size="lg" 
-            variant="outline"
-            className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 min-w-[180px] hover:scale-105 transition-all duration-300 group"
-            onClick={() => window.open("tel:+254720496076", "_self")}
-          >
-            <Phone className="mr-2 h-4 w-4 group-hover:ring-2 group-hover:ring-hero-text/50 rounded-full transition-all" />
-            +254 720 496 076
-          </Button>
-        </div>
-
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '1s' }}>
           <Button 
@@ -98,10 +85,21 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 min-w-[140px] hover:scale-105 transition-all duration-300"
+            className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 min-w-[140px] hover:scale-105 transition-all duration-300 sm:inline-flex hidden"
             onClick={() => window.location.href = '/contact'}
           >
             Learn More
+          </Button>
+
+          {/* Phone number button - only visible on mobile */}
+          <Button 
+            size="lg" 
+            variant="outline"
+            className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 min-w-[180px] hover:scale-105 transition-all duration-300 group sm:hidden"
+            onClick={() => window.open("tel:+254720496076", "_self")}
+          >
+            <Phone className="mr-2 h-4 w-4 group-hover:ring-2 group-hover:ring-hero-text/50 rounded-full transition-all" />
+            +254 720 496 076
           </Button>
         </div>
 

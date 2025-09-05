@@ -36,20 +36,20 @@ const HeroSection = () => {
 
         {/* Main Heading */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-hero-text mb-6 animate-fade-in">
-          Transforming Business Through{" "}
-          <span className="text-accent animate-slide-in-right bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Digital Innovation</span>
+          Revolutionize Your Business with{" "}
+          <span className="text-accent animate-slide-in-right bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Next-Gen Technology</span>
         </h1>
 
         {/* Subheading */}
         <h2 className="text-xl md:text-2xl lg:text-3xl text-hero-text/90 mb-8 font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          VertaTech Solutions - Kenya's Premier Technology Partner
+          Leading East Africa's Digital Transformation Revolution
         </h2>
 
         {/* Description */}
         <p className="text-lg md:text-xl text-hero-text/80 max-w-4xl mx-auto mb-12 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          Powering Kenya's digital transformation with cutting-edge technology solutions. From enterprise 
-          networking and cybersecurity to custom software development - we deliver innovation that drives growth, 
-          enhances security, and accelerates your business into the future.
+          Unleash your business potential with enterprise-grade solutions that redefine excellence. From 
+          bulletproof cybersecurity and intelligent networking to revolutionary software development - we architect 
+          the future of your success with precision, innovation, and unmatched expertise.
         </p>
 
         {/* Services Icons */}

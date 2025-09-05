@@ -17,7 +17,7 @@ const Partner = () => {
   };
 
   const handleEmail = () => {
-    window.open("mailto:partnerships@vertatechsolutions.co.ke?subject=Partnership%20Inquiry", "_blank");
+    window.open("mailto:info@vertatechsolution.com?subject=Partnership%20Inquiry", "_blank");
   };
 
   const achievements = [
@@ -224,7 +224,7 @@ const Partner = () => {
                     size="lg" 
                     className="bg-secondary text-primary hover:bg-secondary/90 shadow-button animate-scale-in"
                     style={{ animationDelay: '0.2s' }}
-                    onClick={() => window.open("mailto:partnerships@vertatechsolutions.co.ke?subject=Partnership%20Application", "_blank")}
+                    onClick={() => window.open("mailto:info@vertatechsolution.com?subject=Partnership%20Application", "_blank")}
                   >
                     Apply to Partner
                   </Button>

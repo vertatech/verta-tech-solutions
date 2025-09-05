@@ -133,7 +133,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-accent flex-shrink-0" />
-                <span className="text-background/80 text-sm">info@vertatechsolutions.com</span>
+                <span className="text-background/80 text-sm">info@vertatechsolution.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />

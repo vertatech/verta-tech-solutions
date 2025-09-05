@@ -79,7 +79,7 @@ const Career = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
-                  onClick={() => window.open("mailto:careers@vertatechsolutions.co.ke?subject=Future%20Opportunities", "_blank")}
+                  onClick={() => window.open("mailto:info@vertatechsolution.com?subject=Future%20Opportunities", "_blank")}
                   size="lg"
                   className="animate-scale-in"
                   style={{ animationDelay: '0.2s' }}

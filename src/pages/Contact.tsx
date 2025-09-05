@@ -21,7 +21,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["info@vertatech.com", "bramwel@vertatech.com"],
+      details: ["info@vertatechsolution.com"],
       description: "We'll respond within 24 hours"
     },
     {
@@ -60,7 +60,7 @@ Service Interest: ${service}
 Message:
 ${message}`;
     
-    const mailtoLink = `mailto:info@vertatechsolutions.co.ke?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:info@vertatechsolution.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink, '_blank');
   };
 

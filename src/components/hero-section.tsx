@@ -29,28 +29,27 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         {/* Logo */}
         <div className="mb-8 animate-bounce-in">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-service-icon-bg rounded-full mb-6 animate-float">
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-service-icon-bg to-accent/20 rounded-full mb-6 animate-float hover:scale-110 transition-all duration-500 shadow-lg shadow-accent/20">
             <img src={vertatechLogo} alt="VertaTech Solutions" className="w-20 h-20 rounded-full" />
           </div>
         </div>
 
         {/* Main Heading */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-hero-text mb-6 animate-fade-in">
-          Welcome to{" "}
-          <span className="text-accent animate-slide-in-right">VertaTech</span>{" "}
-          Solutions
+          Transforming Business Through{" "}
+          <span className="text-accent animate-slide-in-right bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">Digital Innovation</span>
         </h1>
 
         {/* Subheading */}
         <h2 className="text-xl md:text-2xl lg:text-3xl text-hero-text/90 mb-8 font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          Navigating Kenya's Digital Frontier
+          VertaTech Solutions - Kenya's Premier Technology Partner
         </h2>
 
         {/* Description */}
         <p className="text-lg md:text-xl text-hero-text/80 max-w-4xl mx-auto mb-12 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          We are your strategic partner in shaping a thriving digital future for your business or 
-          organization across Kenya. We specialize in providing robust solutions that empower you 
-          to excel in today's rapidly evolving technological landscape.
+          Powering Kenya's digital transformation with cutting-edge technology solutions. From enterprise 
+          networking and cybersecurity to custom software development - we deliver innovation that drives growth, 
+          enhances security, and accelerates your business into the future.
         </p>
 
         {/* Services Icons */}
@@ -58,13 +57,13 @@ const HeroSection = () => {
           {services.map((service, index) => (
             <div
               key={service.label}
-              className="flex flex-col items-center space-y-2 group cursor-pointer animate-scale-in"
+              className="flex flex-col items-center space-y-2 group cursor-pointer animate-scale-in hover-scale"
               style={{ animationDelay: `${0.6 + index * 0.1}s` }}
             >
-              <div className="w-16 h-16 bg-service-icon-bg rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                <service.icon className="h-8 w-8 text-hero-text" />
+              <div className="w-16 h-16 bg-service-icon-bg rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-accent/20 group-hover:to-secondary/20 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-lg group-hover:shadow-accent/25">
+                <service.icon className="h-8 w-8 text-hero-text group-hover:text-accent transition-colors duration-300" />
               </div>
-              <span className="text-sm text-hero-text/90 font-medium text-center">
+              <span className="text-sm text-hero-text/90 font-medium text-center group-hover:text-accent transition-colors duration-300">
                 {service.label}
               </span>
             </div>
@@ -75,17 +74,17 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '1s' }}>
           <Button 
             size="lg" 
-            className="bg-secondary text-primary hover:bg-secondary/90 shadow-button group min-w-[140px] hover:scale-105 transition-all duration-300"
-            onClick={() => window.open("https://wa.me/254720496076?text=Hello%20VertaTech%2C%20I%27m%20interested%20in%20your%20services", "_blank")}
+            className="bg-gradient-to-r from-secondary to-accent text-primary hover:from-secondary/90 hover:to-accent/90 shadow-lg shadow-secondary/25 group min-w-[160px] hover:scale-110 transition-all duration-300 pulse"
+            onClick={() => window.open("https://wa.me/254720496076?text=Hello%20VertaTech%2C%20I%27m%20interested%20in%20your%20technology%20services", "_blank")}
           >
-            Get Started
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            Get Service Now
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
           </Button>
           
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 min-w-[140px] hover:scale-105 transition-all duration-300 sm:inline-flex hidden"
+            className="border-hero-text/30 text-hero-text hover:bg-gradient-to-r hover:from-hero-text/10 hover:to-accent/10 hover:border-accent/50 min-w-[140px] hover:scale-105 transition-all duration-300 sm:inline-flex hidden"
             onClick={() => window.location.href = '/contact'}
           >
             Learn More
@@ -95,10 +94,10 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 min-w-[180px] hover:scale-105 transition-all duration-300 group sm:hidden"
+            className="border-hero-text/30 text-hero-text hover:bg-gradient-to-r hover:from-hero-text/10 hover:to-accent/10 hover:border-accent/50 min-w-[180px] hover:scale-105 transition-all duration-300 group sm:hidden"
             onClick={() => window.open("tel:+254720496076", "_self")}
           >
-            <Phone className="mr-2 h-4 w-4 group-hover:ring-2 group-hover:ring-hero-text/50 rounded-full transition-all" />
+            <Phone className="mr-2 h-4 w-4 group-hover:animate-pulse transition-all" />
             +254 720 496 076
           </Button>
         </div>

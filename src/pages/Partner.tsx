@@ -208,6 +208,51 @@ const Partner = () => {
           </div>
         </section>
 
+        {/* Support Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16 animate-fade-in">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Support Our Mission</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Want to support VertaTech Solutions without entering into a formal partnership? 
+                Your donation helps us continue innovating and driving digital transformation across East Africa.
+              </p>
+            </div>
+
+            <div className="text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <Card className="max-w-lg mx-auto shadow-card">
+                <CardContent className="p-8">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <DollarSign className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4">Make a Donation</h3>
+                  <p className="text-muted-foreground mb-6">
+                    Support our technology initiatives and help us reach more businesses across Kenya and East Africa.
+                  </p>
+                  
+                  {/* PayPal Donation Form */}
+                  <form action="https://www.paypal.com/donate" method="post" target="_top" className="mb-4">
+                    <input type="hidden" name="hosted_button_id" value="KJZH38N4HDGNS" />
+                    <input 
+                      type="image" 
+                      src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" 
+                      name="submit" 
+                      title="PayPal - The safer, easier way to pay online!" 
+                      alt="Donate with PayPal button"
+                      className="mx-auto hover:opacity-80 transition-opacity duration-300 border-0"
+                    />
+                    <img alt="" src="https://www.paypal.com/en_KE/i/scr/pixel.gif" width="1" height="1" className="border-0" />
+                  </form>
+                  
+                  <p className="text-sm text-muted-foreground">
+                    Every contribution makes a difference in our mission to transform East Africa's digital landscape.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-20 bg-subtle-gradient">
           <div className="container mx-auto px-4">

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
   Handshake, TrendingUp, Users, Award, Globe, Target, 
-  CheckCircle, Building, Brain, DollarSign, Zap, Shield 
+  CheckCircle, Building, Brain, DollarSign, Zap, Shield, Banknote 
 } from "lucide-react";
 import partnerBg from "@/assets/partner-bg.jpg";
 
@@ -255,7 +255,7 @@ const Partner = () => {
               <Card className="shadow-card hover:shadow-soft transition-all duration-300">
                 <CardContent className="p-8 text-center">
                   <div className="w-12 h-12 bg-green-600/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <DollarSign className="h-6 w-6 text-green-600" />
+                    <Banknote className="h-6 w-6 text-green-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4">Kenyan Donors</h3>
                   <p className="text-muted-foreground mb-6">

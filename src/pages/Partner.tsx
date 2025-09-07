@@ -219,15 +219,16 @@ const Partner = () => {
               </p>
             </div>
 
-            <div className="text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <Card className="max-w-lg mx-auto shadow-card">
-                <CardContent className="p-8">
+            <div className="grid md:grid-cols-2 gap-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              {/* PayPal Donation */}
+              <Card className="shadow-card hover:shadow-soft transition-all duration-300">
+                <CardContent className="p-8 text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <DollarSign className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">Make a Donation</h3>
+                  <h3 className="text-xl font-semibold mb-4">International Donors</h3>
                   <p className="text-muted-foreground mb-6">
-                    Support our technology initiatives and help us reach more businesses across Kenya and East Africa.
+                    Support us from anywhere in the world using PayPal
                   </p>
                   
                   {/* PayPal Donation Form */}
@@ -245,10 +246,51 @@ const Partner = () => {
                   </form>
                   
                   <p className="text-sm text-muted-foreground">
-                    Every contribution makes a difference in our mission to transform East Africa's digital landscape.
+                    Secure payments via PayPal
                   </p>
                 </CardContent>
               </Card>
+
+              {/* M-Pesa Donation */}
+              <Card className="shadow-card hover:shadow-soft transition-all duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-12 h-12 bg-green-600/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <DollarSign className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4">Kenyan Donors</h3>
+                  <p className="text-muted-foreground mb-6">
+                    Support us easily using M-Pesa mobile money
+                  </p>
+                  
+                  {/* M-Pesa Payment Details */}
+                  <div className="mb-6">
+                    <img 
+                      src="/lovable-uploads/05e056b5-6477-4f5b-926a-fefb76acb801.png" 
+                      alt="Lipa Na M-Pesa - VertaTech Solutions"
+                      className="mx-auto max-w-full h-auto rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                    />
+                  </div>
+                  
+                  <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg mb-4">
+                    <p className="text-sm font-medium text-green-800 dark:text-green-200">
+                      Till Number: <span className="font-bold text-lg">8508654</span>
+                    </p>
+                    <p className="text-xs text-green-600 dark:text-green-300 mt-1">
+                      Business Name: VertaTech Solutions
+                    </p>
+                  </div>
+                  
+                  <p className="text-sm text-muted-foreground">
+                    Use M-Pesa App or dial *334# to send money
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center mt-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <p className="text-sm text-muted-foreground">
+                Every contribution makes a difference in our mission to transform East Africa's digital landscape.
+              </p>
             </div>
           </div>
         </section>

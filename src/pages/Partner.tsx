@@ -320,7 +320,7 @@ const Partner = () => {
                     variant="outline" 
                     className="border-hero-text/30 text-hero-text hover:bg-hero-text/10 animate-scale-in"
                     style={{ animationDelay: '0.4s' }}
-                    onClick={() => window.open("https://issuu.com/www.vertatechsolution.com/docs/vertatech_solutions_partner_kit", "_blank")}
+                    onClick={() => window.open("https://drive.google.com/file/d/1x5mJ1l-XRpBvZ3NkQs58CTOJlFBLn4lK/view?usp=drive_link", "_blank")}
                   >
                     Download Partner Kit
                   </Button>

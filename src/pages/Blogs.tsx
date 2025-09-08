@@ -61,22 +61,34 @@ const Blogs = () => {
 
   const shareArticle = (post, platform) => {
     const url = `${window.location.origin}/blogs`;
+    const postUrl = `${url}?article=${encodeURIComponent(post.title.toLowerCase().replace(/\s+/g, '-'))}`;
     const title = encodeURIComponent(`${post.title} - VertaTech Solutions`);
-    const text = encodeURIComponent(`${post.excerpt} Read more at VertaTech Solutions:`);
+    const text = encodeURIComponent(`${post.excerpt}`);
     
     let shareUrl = '';
     switch (platform) {
       case 'facebook':
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${text}`;
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}&quote=${title}:%20${text}`;
         break;
       case 'twitter':
-        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${text}`;
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${title}%20-%20${text}`;
         break;
       case 'linkedin':
-        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&title=${title}&summary=${text}`;
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}&title=${title}&summary=${text}`;
         break;
       case 'copy':
-        navigator.clipboard.writeText(`${post.title}\n\n${post.excerpt}\n\nRead more: ${url}`);
+        navigator.clipboard.writeText(`${post.title}\n\n${post.excerpt}\n\nRead more: ${postUrl}`)
+          .then(() => {
+            // Show success feedback
+            const copyButton = document.querySelector('[title="Copy article link"]');
+            if (copyButton) {
+              const originalText = copyButton.innerHTML;
+              copyButton.innerHTML = '<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+              setTimeout(() => {
+                copyButton.innerHTML = originalText;
+              }, 2000);
+            }
+          });
         return;
     }
     

@@ -14,24 +14,39 @@ const Services = () => {
     window.open(`https://wa.me/254720496076?text=${encodeURIComponent(message)}`, "_blank");
   };
 
-  const services = [
+  const mainServices = [
     {
       icon: Code,
       title: "Web & System Development",
-      description: "Custom websites, web applications, and robust internal systems designed to enhance your online presence and streamline operations.",
-      features: ["Custom Websites", "E-commerce Platforms", "Management Systems", "Web Applications"]
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications for iOS and Android, designed to provide seamless user experiences and expand your business reach.",
-      features: ["iOS Applications", "Android Applications", "Cross-Platform Apps", "App Store Deployment"]
+      description: "Custom websites, web applications, robust internal systems, and seamless API integrations designed to enhance your online presence and streamline operations.",
+      features: ["Custom Websites", "E-commerce Platforms", "Management Systems", "API Integrations", "Web Applications"]
     },
     {
       icon: Eye,
       title: "CCTV & Network Installations",
-      description: "Professional CCTV surveillance systems and network infrastructure for secure, high-speed connectivity across your organization.",
-      features: ["HD Camera Systems", "Network Security", "Remote Monitoring", "WiFi Configuration"]
+      description: "Professional CCTV surveillance systems and comprehensive network infrastructure for secure, high-speed connectivity across your organization.",
+      features: ["HD Camera Systems", "Network Infrastructure", "Remote Monitoring", "WiFi Configuration", "Security Networks"]
+    },
+    {
+      icon: Server,
+      title: "IT Consultations & Support",
+      description: "Expert IT guidance, business technology planning, and strategic advice for operational efficiency and digital transformation.",
+      features: ["IT Strategy Planning", "Technology Assessment", "Digital Transformation", "System Optimization"]
+    },
+    {
+      icon: Wifi,
+      title: "ICT Equipment & Software Supply",
+      description: "Reliable sourcing of high-quality ICT equipment and licensed software solutions to meet your operational needs.",
+      features: ["Computer Hardware", "Networking Equipment", "Licensed Software", "Technical Support"]
+    }
+  ];
+
+  const otherServices = [
+    {
+      icon: Smartphone,
+      title: "Mobile App Development",
+      description: "Native and cross-platform mobile applications for iOS and Android, designed to provide seamless user experiences.",
+      features: ["iOS Applications", "Android Applications", "Cross-Platform Apps", "App Store Deployment"]
     },
     {
       icon: Network,
@@ -42,20 +57,8 @@ const Services = () => {
     {
       icon: Camera,
       title: "Graphic Design & Video Editing",
-      description: "Professional creative services bringing your brand vision to life through compelling visual content and narratives.",
+      description: "Professional creative services bringing your brand vision to life through compelling visual content.",
       features: ["Brand Design", "Marketing Materials", "Video Production", "Digital Content"]
-    },
-    {
-      icon: Server,
-      title: "Business Consultations & Registration",
-      description: "Expert guidance for business setup, KRA registration, and strategic advice for operational efficiency and growth.",
-      features: ["Business Registration", "KRA Compliance", "Strategic Planning", "Market Entry"]
-    },
-    {
-      icon: Wifi,
-      title: "ICT Equipment & Software Supply",
-      description: "Reliable sourcing of high-quality ICT equipment and licensed software solutions to meet your operational needs.",
-      features: ["Computer Hardware", "Networking Equipment", "Licensed Software", "Technical Support"]
     },
     {
       icon: Shield,
@@ -91,14 +94,20 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Services Grid */}
+        {/* Main Services Section */}
         <section className="py-20 bg-subtle-gradient">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8">
-              {services.map((service, index) => (
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Core Services</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Our primary focus areas where we deliver exceptional technology solutions
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              {mainServices.map((service, index) => (
                 <Card 
                   key={index} 
-                  className="shadow-card hover:shadow-soft transition-all duration-300 animate-scale-in hover-scale"
+                  className="shadow-card hover:shadow-soft transition-all duration-300 animate-scale-in hover-scale border-primary/20"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardHeader>
@@ -127,6 +136,56 @@ const Services = () => {
                       <Button 
                         onClick={() => handleGetService(service.title)}
                         className="w-full bg-primary hover:bg-primary/90 text-white"
+                      >
+                        Get Service
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            {/* Other Services Section */}
+            <div className="text-center mb-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Additional Services</h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Complementary services to support your complete technology needs
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {otherServices.map((service, index) => (
+                <Card 
+                  key={index} 
+                  className="shadow-card hover:shadow-soft transition-all duration-300 animate-scale-in hover-scale"
+                  style={{ animationDelay: `${(index + mainServices.length) * 0.1}s` }}
+                >
+                  <CardHeader>
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <service.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-xl">{service.title}</CardTitle>
+                      </div>
+                    </div>
+                    <CardDescription className="text-base mt-4">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 mb-6">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-accent rounded-full" />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-6">
+                      <Button 
+                        onClick={() => handleGetService(service.title)}
+                        className="w-full bg-primary hover:bg-primary/90 text-white"
+                        variant="outline"
                       >
                         Get Service
                       </Button>

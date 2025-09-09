@@ -1,9 +1,12 @@
 import Navigation from "@/components/ui/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Building, TrendingUp, Users } from "lucide-react";
+import { Star, Building, TrendingUp, Users, Camera } from "lucide-react";
 import LiveChat from "@/components/live-chat";
 import Footer from "@/components/footer";
+import galleryPlaceholder1 from "@/assets/gallery-placeholder-1.jpg";
+import galleryPlaceholder2 from "@/assets/gallery-placeholder-2.jpg";
+import galleryPlaceholder3 from "@/assets/gallery-placeholder-3.jpg";
 
 const SuccessStories = () => {
   const stories = [
@@ -74,16 +77,64 @@ const SuccessStories = () => {
           </div>
         </section>
 
-        {/* Gallery Section - YouTube Video */}
+        {/* Gallery Section */}
         <section className="py-20 bg-muted/20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Gallery</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Take a look at our latest work and company highlights
+                Take a look at our workspace, projects, and team in action
               </p>
             </div>
             
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <Card className="overflow-hidden shadow-card hover:shadow-soft transition-all duration-300">
+                <div className="aspect-video">
+                  <img
+                    src={galleryPlaceholder1}
+                    alt="Gallery Image 1 - Office Workspace"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-center">
+                    <Camera className="h-5 w-5 text-muted-foreground" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden shadow-card hover:shadow-soft transition-all duration-300">
+                <div className="aspect-video">
+                  <img
+                    src={galleryPlaceholder2}
+                    alt="Gallery Image 2 - Network Infrastructure"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-center">
+                    <Camera className="h-5 w-5 text-muted-foreground" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden shadow-card hover:shadow-soft transition-all duration-300">
+                <div className="aspect-video">
+                  <img
+                    src={galleryPlaceholder3}
+                    alt="Gallery Image 3 - Team Collaboration"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-center">
+                    <Camera className="h-5 w-5 text-muted-foreground" />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* YouTube Video */}
             <div className="max-w-4xl mx-auto">
               <Card className="overflow-hidden shadow-card">
                 <div className="aspect-video">

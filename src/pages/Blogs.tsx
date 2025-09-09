@@ -3,7 +3,7 @@ import LiveChat from "@/components/live-chat";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User, ArrowRight, X, Clock, Share2, Facebook, Twitter, Linkedin, Link, Copy } from "lucide-react";
+import { Calendar, User, ArrowRight, X, Clock, Share2, Facebook, Twitter, Linkedin, Link, Copy, MessageCircle } from "lucide-react";
 import Footer from "@/components/footer";
 import SEOHead from "@/components/seo-head";
 import { useState } from "react";
@@ -76,6 +76,9 @@ const Blogs = () => {
       case 'linkedin':
         shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}&title=${title}&summary=${text}`;
         break;
+      case 'whatsapp':
+        shareUrl = `https://wa.me/?text=${title}%20-%20${text}%0A%0ARead%20more:%20${encodeURIComponent(postUrl)}`;
+        break;
       case 'copy':
         navigator.clipboard.writeText(`${post.title}\n\n${post.excerpt}\n\nRead more: ${postUrl}`)
           .then(() => {
@@ -133,10 +136,10 @@ const Blogs = () => {
 
         {/* Blog Posts */}
         <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="container mx-auto mobile-padding">
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
               {posts.map((post, index) => (
-                <Card key={index} className="shadow-card hover:shadow-soft transition-all duration-300 overflow-hidden">
+                <Card key={index} className="shadow-card hover:shadow-soft transition-all duration-300 overflow-hidden animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
                   <div className="aspect-video overflow-hidden">
                     <img
                       src={post.image}
@@ -144,37 +147,38 @@ const Blogs = () => {
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-2">
-                      <Badge variant="secondary">{post.category}</Badge>
-                      <span className="text-sm text-muted-foreground">{post.readTime}</span>
+                  <CardHeader className="p-4 sm:p-6">
+                    <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                      <Badge variant="secondary" className="text-xs sm:text-sm">{post.category}</Badge>
+                      <span className="text-xs sm:text-sm text-muted-foreground">{post.readTime}</span>
                     </div>
-                    <CardTitle className="text-xl hover:text-primary transition-colors">
+                    <CardTitle className="text-lg sm:text-xl hover:text-primary transition-colors line-clamp-2">
                       {post.title}
                     </CardTitle>
-                    <CardDescription className="text-base">
+                    <CardDescription className="text-sm sm:text-base line-clamp-3">
                       {post.excerpt}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                  <CardContent className="p-4 sm:p-6 pt-0">
+                    <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+                      <div className="flex items-center space-x-2 sm:space-x-4 text-xs sm:text-sm text-muted-foreground">
                         <div className="flex items-center space-x-1">
-                          <User className="h-4 w-4" />
-                          <span>{post.author}</span>
+                          <User className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <span className="truncate">{post.author}</span>
                         </div>
                         <div className="flex items-center space-x-1">
-                          <Calendar className="h-4 w-4" />
-                          <span>{post.date}</span>
+                          <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
+                          <span className="hidden sm:inline">{post.date}</span>
+                          <span className="sm:hidden">{post.date.split(' ')[0]} {post.date.split(' ')[1]}</span>
                         </div>
                       </div>
                     </div>
                     <Button 
                       variant="outline" 
-                      className="w-full group"
+                      className="w-full group mobile-button touch-target"
                       onClick={() => handleReadMore(post)}
                     >
-                      Read Full Article
+                      <span className="text-sm sm:text-base">Read Full Article</span>
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </CardContent>
@@ -186,111 +190,126 @@ const Blogs = () => {
 
         {/* Full Article Modal */}
         {selectedPost && (
-          <div className="fixed inset-0 bg-black/50 z-50 flex items-start justify-center p-4 overflow-y-auto">
-            <div className="bg-background w-full max-w-4xl rounded-lg shadow-xl my-8 animate-fade-in">
-              <div className="sticky top-0 bg-background border-b p-6 flex items-center justify-between rounded-t-lg">
-                <div className="flex items-center space-x-4">
-                  <Badge variant="secondary">{selectedPost.category}</Badge>
-                  <span className="text-sm text-muted-foreground">{selectedPost.readTime}</span>
+          <div className="fixed inset-0 bg-black/50 z-50 flex items-start justify-center p-2 sm:p-4 overflow-y-auto">
+            <div className="bg-background w-full max-w-4xl rounded-lg shadow-xl my-4 sm:my-8 animate-fade-in max-h-[95vh] overflow-hidden flex flex-col">
+              <div className="sticky top-0 bg-background border-b p-4 sm:p-6 flex items-center justify-between rounded-t-lg z-10">
+                <div className="flex items-center space-x-2 sm:space-x-4 flex-wrap gap-2">
+                  <Badge variant="secondary" className="text-xs sm:text-sm">{selectedPost.category}</Badge>
+                  <span className="text-xs sm:text-sm text-muted-foreground">{selectedPost.readTime}</span>
                 </div>
                 <Button 
                   variant="ghost" 
                   size="sm"
                   onClick={handleCloseArticle}
-                  className="hover:bg-muted"
+                  className="hover:bg-muted touch-target"
                 >
                   <X className="h-5 w-5" />
                 </Button>
               </div>
               
-              <div className="p-6">
-                <div className="aspect-video overflow-hidden rounded-lg mb-6">
-                  <img
-                    src={selectedPost.image}
-                    alt={selectedPost.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                
-                <h1 className="text-3xl md:text-4xl font-bold mb-4">{selectedPost.title}</h1>
-                
-                <div className="flex items-center space-x-6 text-sm text-muted-foreground mb-8 pb-6 border-b">
-                  <div className="flex items-center space-x-2">
-                    <User className="h-4 w-4" />
-                    <span>{selectedPost.author}</span>
+              <div className="flex-1 overflow-y-auto">
+                <div className="p-4 sm:p-6">
+                  <div className="aspect-video overflow-hidden rounded-lg mb-4 sm:mb-6">
+                    <img
+                      src={selectedPost.image}
+                      alt={selectedPost.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <Calendar className="h-4 w-4" />
-                    <span>{selectedPost.date}</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Clock className="h-4 w-4" />
-                    <span>{selectedPost.time}</span>
-                  </div>
-                </div>
-                
-                <div className="prose prose-lg max-w-none">
-                  {selectedPost.content.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="text-muted-foreground leading-relaxed mb-6">
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-                
-                <div className="mt-8 pt-6 border-t">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                        <User className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <p className="font-semibold">{selectedPost.author}</p>
-                        <p className="text-sm text-muted-foreground">Published on {selectedPost.date} at {selectedPost.time}</p>
-                      </div>
+                  
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">{selectedPost.title}</h1>
+                  
+                  <div className="flex items-center space-x-4 sm:space-x-6 text-xs sm:text-sm text-muted-foreground mb-6 sm:mb-8 pb-4 sm:pb-6 border-b flex-wrap gap-2">
+                    <div className="flex items-center space-x-2">
+                      <User className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <span>{selectedPost.author}</span>
                     </div>
-                    
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm text-muted-foreground mr-2">Share:</span>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="p-2"
-                        onClick={() => shareArticle(selectedPost, 'copy')}
-                        title="Copy article link"
-                      >
-                        <Copy className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="p-2"
-                        onClick={() => shareArticle(selectedPost, 'facebook')}
-                      >
-                        <Facebook className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="p-2"
-                        onClick={() => shareArticle(selectedPost, 'twitter')}
-                      >
-                        <Twitter className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="p-2"
-                        onClick={() => shareArticle(selectedPost, 'linkedin')}
-                      >
-                        <Linkedin className="h-4 w-4" />
-                      </Button>
+                    <div className="flex items-center space-x-2">
+                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <span className="hidden sm:inline">{selectedPost.date}</span>
+                      <span className="sm:hidden">{selectedPost.date.split(' ')[0]} {selectedPost.date.split(' ')[1]}</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Clock className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <span className="hidden sm:inline">{selectedPost.time}</span>
                     </div>
                   </div>
                   
-                  <div className="flex justify-center">
-                    <Button onClick={handleCloseArticle}>
-                      Close Article
-                    </Button>
+                  <div className="prose prose-sm sm:prose-lg max-w-none">
+                    {selectedPost.content.split('\n\n').map((paragraph, index) => (
+                      <p key={index} className="text-muted-foreground leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-4">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                          <User className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-sm sm:text-base">{selectedPost.author}</p>
+                          <p className="text-xs sm:text-sm text-muted-foreground">
+                            Published on <span className="hidden sm:inline">{selectedPost.date} at {selectedPost.time}</span>
+                            <span className="sm:hidden">{selectedPost.date.split(' ')[0]} {selectedPost.date.split(' ')[1]}</span>
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-xs sm:text-sm text-muted-foreground mr-2">Share:</span>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="p-2 touch-target"
+                          onClick={() => shareArticle(selectedPost, 'copy')}
+                          title="Copy article link"
+                        >
+                          <Copy className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="p-2 touch-target"
+                          onClick={() => shareArticle(selectedPost, 'facebook')}
+                        >
+                          <Facebook className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="p-2 touch-target"
+                          onClick={() => shareArticle(selectedPost, 'twitter')}
+                        >
+                          <Twitter className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="p-2 touch-target"
+                          onClick={() => shareArticle(selectedPost, 'linkedin')}
+                        >
+                          <Linkedin className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="p-2 text-green-600 hover:text-green-700 touch-target"
+                          onClick={() => shareArticle(selectedPost, 'whatsapp')}
+                          title="Share on WhatsApp"
+                        >
+                          <MessageCircle className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+                    
+                    <div className="flex justify-center">
+                      <Button onClick={handleCloseArticle} className="mobile-button touch-target">
+                        Close Article
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>

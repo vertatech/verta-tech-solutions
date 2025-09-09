@@ -74,16 +74,16 @@ const Index = () => {
   ];
 
   const stats = [
-    { number: "50+", label: "Projects Completed", icon: CheckCircle },
-    { number: "100%", label: "Client Satisfaction", icon: Star },
+    { number: "25+", label: "Projects Completed", icon: CheckCircle },
+    { number: "99%", label: "Client Satisfaction", icon: Star },
     { number: "24/7", label: "Support Available", icon: Users },
     { number: "3+", label: "Years Experience", icon: Target }
   ];
 
   const testimonials = [
     {
-      name: "John Kamau",
-      company: "Tech Solutions Ltd",
+      name: "Godwin Indimuli",
+      company: "Tech Wave Solutions",
       text: "VertaTech transformed our entire IT infrastructure. Exceptional service and results!",
       rating: 5
     },
@@ -94,8 +94,8 @@ const Index = () => {
       rating: 5
     },
     {
-      name: "David Muthoni",
-      company: "Manufacturing Corp",
+      name: "David Oketch",
+      company: "Zenith Solutions",
       text: "Their custom software solution streamlined our operations perfectly.",
       rating: 5
     }
@@ -109,7 +109,7 @@ const Index = () => {
         title="VertaTech Solutions - Leading Kenya's Digital Transformation"
         description="Expert technology solutions in Kenya. Specializing in networking, security systems, CCTV installation, custom software development, and digital transformation services."
         keywords="technology solutions Kenya, networking services, CCTV installation, software development, digital transformation, IT consulting, cybersecurity, web development, system integration"
-        canonical="https://vertatechsolutions.co.ke"
+        canonical="https://vertatechsolution.com"
       />
       
       <Navigation />
@@ -134,7 +134,7 @@ const Index = () => {
               <iframe
                 ref={videoRef}
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/zfNGsJk7AGU?enablejsapi=1&autoplay=0&mute=1"
+                src="https://www.youtube.com/embed/WrHq0LA37qE?si=A4_Dl5XmZxs7ALZQ?enablejsapi=1&autoplay=0&mute=1"
                 title="VertaTech Solutions - Company Overview"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
